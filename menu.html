@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — Miss Greek · Beach Bar &amp; Grill</title>
+  <meta name="description" content="The Miss Greek menu — priced, and still talking. Plates in the middle. Grab a fork." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Jost:ital,wght@0,300..700;1,300..700&family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body class="page-sub">
+
+  <div class="shell shell--split">
+
+    <!-- ══════════ LEFT · STICKY CARD ══════════ -->
+    <section class="stage stage--side">
+      <div class="stage__media"><img src="images/skewers.jpg" alt="Souvla straight off the fire" /></div>
+      <div class="stage__grade" aria-hidden="true"></div>
+      <canvas class="stage__dust" aria-hidden="true"></canvas>
+      <header class="bar">
+        <button class="bar__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a class="bar__brand" href="index.html">Miss Greek</a>
+        <nav class="bar__links" aria-label="Primary">
+          <a href="menu.html" aria-current="page">Menu</a>
+          <a href="order.html">Order</a>
+          <a href="about.html">About</a>
+        </nav>
+        <a class="bar__cta" href="reservation.html">Book a Table</a>
+      </header>
+
+      <nav class="fold" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order Online</a>
+        <a href="about.html">About</a>
+        <a href="reservation.html">Book a Table</a>
+        <p class="fold__script">see you at sunset</p>
+      </nav>
+      <h1 class="stage__title stage__title--page"><span data-reveal>Menu</span></h1>
+      <p class="stage__script" data-reveal>plates in the middle. grab a fork.</p>
+    </section>
+
+    <!-- ══════════ RIGHT · SCROLLING MENU ══════════ -->
+    <div class="flow">
+      <div class="card card--pad">
+
+        <div class="chips" role="tablist" aria-label="Menu sections">
+          <button class="chip is-active" role="tab" aria-selected="true" data-tab="kitchen">From the Kitchen</button>
+          <button class="chip" role="tab" aria-selected="false" data-tab="cocktails">Cocktails</button>
+          <button class="chip" role="tab" aria-selected="false" data-tab="easy">Spritz &amp; Frozen</button>
+          <button class="chip" role="tab" aria-selected="false" data-tab="cellar">Wine &amp; Beer</button>
+        </div>
+
+        <!-- ── KITCHEN ── -->
+        <section class="panel is-active" data-panel="kitchen" role="tabpanel">
+          <h2 class="flourish"><span>To Start · For the Middle</span></h2>
+
+          <article class="row" data-reveal>
+            <img class="row__thumb" src="images/food/dolmades.jpg" alt="The Big Spread" />
+            <div class="row__body">
+              <div class="row__line"><h3>The Big Spread</h3><span class="row__dots"></span><span class="row__price">$38</span></div>
+              <p>Everything good, in the middle, for the table. Order it and stop thinking.</p>
+            </div>
+          </article>
+          <article class="row" data-reveal>
+            <img class="row__thumb" src="images/food/grill-veg.jpg" alt="Grilled Octopus" />
+            <div class="row__body">
+              <div class="row__line"><h3>Grilled Octopus</h3><span class="row__dots"></span><span class="row__price">$24</span></div>
+              <p>Charred, tender, faintly smug about it. Capers and a lot of lemon.</p>
+            </div>
+          </article>
+          <article class="row" data-reveal>
+            <img class="row__thumb" src="images/food/feta.jpg" alt="Saganaki" />
+            <div class="row__body">
+              <div class="row__line"><h3>Saganaki</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
+              <p>Cheese. On fire. We're not going to apologize.</p>
+            </div>
+          </article>
+          <article class="row" data-reveal>
+            <img class="row__thumb" src="images/salad-plate.jpg" alt="Greek Salad" />
+            <div class="row__body">
+              <div class="row__line"><h3>Greek Salad, Obviously</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
+              <p>Tomatoes that taste like tomatoes. A brick of feta. Done.</p>
+            </div>
+          </article>
+
+          <h2 class="flourish"><span>From the Sea &amp; the Fire</span></h2>
+
+          <article class="row" data-reveal>
+            <img class="row__thumb" src="images/food/fish2.jpg" alt="Whole Branzino" />
+            <div class="row__body">
+              <div class="row__line"><h3>Whole Branzino</h3><span class="row__dots"></span><span class="row__price">$42</span></div>
+              <p>Caught looking. Grilled simply, served whole, gone fast.</p>
+            </div>
+          </article>
+          <article class="row" data-reveal>
+            <img class="row__thumb" src="images/food/lamb-grill.jpg" alt="Lamb Chops" />
+            <div class="row__body">
+              <div class="row__line"><h3>Lamb Chops</h3><span class="row__dots"></span><span class="row__price">$46</span></div>
+              <p>Off the grill, kissed with oregano. No notes.</p>
+            </div>
+          </article>
+          <article class="row" data-reveal>
+            <img class="row__thumb" src="images/food/octopus.jpg" alt="Chicken Souvla" />
+            <div class="row__body">
+              <div class="row__line"><h3>Chicken Souvla</h3><span class="row__dots"></span><span class="row__price">$28</span></div>
+              <p>Slow-turned, citrus-marinated, beach-perfect.</p>
+            </div>
+          </article>
+          <article class="row" data-reveal>
+            <img class="row__thumb" src="images/food/pasta-tomato.jpg" alt="Shrimp Saganaki" />
+            <div class="row__body">
+              <div class="row__line"><h3>Shrimp Saganaki</h3><span class="row__dots"></span><span class="row__price">$32</span></div>
+              <p>Swimming in tomato and feta. You'll want bread. Get bread.</p>
+            </div>
+          </article>
+          <article class="row" data-reveal>
+            <img class="row__thumb" src="images/food/moussaka.jpg" alt="Moussaka" />
+            <div class="row__body">
+              <div class="row__line"><h3>Moussaka</h3><span class="row__dots"></span><span class="row__price">$29</span></div>
+              <p>Layered like a good summer. A top you'll fight over.</p>
+            </div>
+          </article>
+
+          <h2 class="flourish"><span>Sweet</span></h2>
+
+          <article class="row" data-reveal>
+            <img class="row__thumb" src="images/dessert.jpg" alt="Loukoumades" />
+            <div class="row__body">
+              <div class="row__line"><h3>Loukoumades</h3><span class="row__dots"></span><span class="row__price">$13</span></div>
+              <p>Honey-drunk doughnuts. The reason you skipped the gym. Worth it.</p>
+            </div>
+          </article>
+          <article class="row" data-reveal>
+            <img class="row__thumb" src="images/food/baklava2.jpg" alt="Baklava" />
+            <div class="row__body">
+              <div class="row__line"><h3>Baklava</h3><span class="row__dots"></span><span class="row__price">$12</span></div>
+              <p>Forty layers of why-not.</p>
+            </div>
+          </article>
+        </section>
+
+        <!-- ── COCKTAILS ── -->
+        <section class="panel" data-panel="cocktails" role="tabpanel" hidden>
+          <h2 class="flourish"><span>Signature · all $16</span></h2>
+
+          <article class="row">
+            <img class="row__thumb" src="images/cocktail-pour.jpg" alt="Miss Greek cocktail" />
+            <div class="row__body">
+              <div class="row__line"><h3>Miss Greek</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
+              <p>Her namesake. Order it, you've met her. Vodka or gin, elderflower, raspberry, lime.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/negroni.jpg" alt="Mr Greek cocktail" />
+            <div class="row__body">
+              <div class="row__line"><h3>Mr Greek</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
+              <p>He thinks he runs the place. Zacapa 23, Aperol, house vermouth, burnt cinnamon.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/cocktails-cheers.jpg" alt="Greek Mojito" />
+            <div class="row__body">
+              <div class="row__line"><h3>Greek Mojito</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
+              <p>Mint took a Greek holiday. Skinos Mastiha, cucumber, basil, lime, bubbles.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/food/spritz.jpg" alt="Revenge of the Spartans" />
+            <div class="row__body">
+              <div class="row__line"><h3>Revenge of the Spartans</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
+              <p>Tequila, with a war cry. Don Julio Blanco, mastiha, watermelon, lime, basil.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/wine-pour.jpg" alt="Tears of Chios" />
+            <div class="row__body">
+              <div class="row__line"><h3>Tears of Chios</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
+              <p>Cry happy. It's the mastiha. Belvedere, red grapes, lime, agave, mint.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/vineyard-glasses.jpg" alt="Greek Summer" />
+            <div class="row__body">
+              <div class="row__line"><h3>Greek Summer</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
+              <p>Three months, all year, in a glass. Aphrodise rosé, Otto's vermouth, grapefruit.</p>
+            </div>
+          </article>
+
+          <p class="secret" data-reveal><span>the secret pour</span> One off-menu drink, never written down. Ask what Miss Greek would drink. If you know, you know.</p>
+        </section>
+
+        <!-- ── SPRITZ & FROZEN ── -->
+        <section class="panel" data-panel="easy" role="tabpanel" hidden>
+          <h2 class="flourish"><span>Refreshing Spritz</span></h2>
+
+          <article class="row">
+            <img class="row__thumb" src="images/food/spritz.jpg" alt="Aperol Spritz" />
+            <div class="row__body">
+              <div class="row__line"><h3>Aperol Spritz</h3><span class="row__dots"></span><span class="row__price">$13</span></div>
+              <p>Sunset in a glass, before sunset. Aperol, Prosecco, orange.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/vineyard-glasses.jpg" alt="Hugo Spritz" />
+            <div class="row__body">
+              <div class="row__line"><h3>Hugo Spritz</h3><span class="row__dots"></span><span class="row__price">$13</span></div>
+              <p>Elderflower's day off. Elderflower, mint, Prosecco.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/cocktails-cheers.jpg" alt="Mamma Miamosa" />
+            <div class="row__body">
+              <div class="row__line"><h3>Mamma Miamosa</h3><span class="row__dots"></span><span class="row__price">$11</span></div>
+              <p>Brunch's loudest friend. Orange &amp; bubbles.</p>
+            </div>
+          </article>
+
+          <h2 class="flourish"><span>Frozen · $14</span></h2>
+
+          <article class="row">
+            <img class="row__thumb" src="images/food/hummus.jpg" alt="Piña Colada" />
+            <div class="row__body">
+              <div class="row__line"><h3>Piña Colada</h3><span class="row__dots"></span><span class="row__price">$14</span></div>
+              <p>Summer's official slushie. Pineapple, coconut, Zacapa 23.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/cocktail-pour.jpg" alt="Frozen Daiquiri" />
+            <div class="row__body">
+              <div class="row__line"><h3>Frozen Daiquiri</h3><span class="row__dots"></span><span class="row__price">$14</span></div>
+              <p>Pick a fruit, thank us later. Strawberry / mango / watermelon / passion fruit.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/food/dolmades.jpg" alt="Big Bowls for the table" />
+            <div class="row__body">
+              <div class="row__line"><h3>Big Bowls · For the Table</h3><span class="row__dots"></span><span class="row__price">$30</span></div>
+              <p>Athena's Nectar or the Methana Volcano. Erupts on contact — bring friends.</p>
+            </div>
+          </article>
+        </section>
+
+        <!-- ── WINE & BEER ── -->
+        <section class="panel" data-panel="cellar" role="tabpanel" hidden>
+          <h2 class="flourish"><span>Greek Wine · By the Glass</span></h2>
+
+          <article class="row">
+            <img class="row__thumb" src="images/wine-pour.jpg" alt="Assyrtiko" />
+            <div class="row__body">
+              <div class="row__line"><h3>Assyrtiko — Anthos</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
+              <p>Crisp, mineral, dangerously drinkable.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/vineyard-glasses.jpg" alt="Moschofilero" />
+            <div class="row__body">
+              <div class="row__line"><h3>Moschofilero — Mantinia</h3><span class="row__dots"></span><span class="row__price">$15</span></div>
+              <p>Floral, light on its feet.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/food/octopus2.jpg" alt="Malagousia" />
+            <div class="row__body">
+              <div class="row__line"><h3>Malagousia — Gerovassiliou</h3><span class="row__dots"></span><span class="row__price">$22</span></div>
+              <p>Peach and white flowers. A showpiece.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/fine-dining.jpg" alt="House Retsina" />
+            <div class="row__body">
+              <div class="row__line"><h3>House Retsina</h3><span class="row__dots"></span><span class="row__price">$12</span></div>
+              <p>An acquired taste. Acquire it.</p>
+            </div>
+          </article>
+
+          <h2 class="flourish"><span>Beer &amp; the Cellar</span></h2>
+
+          <article class="row">
+            <img class="row__thumb" src="images/food/beer.jpg" alt="Cold beer" />
+            <div class="row__body">
+              <div class="row__line"><h3>Greek · Domestic · Local</h3><span class="row__dots"></span><span class="row__price">$7–8</span></div>
+              <p>Mythos, ice cold — the beach's official handshake. Plus Fix, Alpha, Corona, Stella &amp; local IPAs.</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/interior.jpg" alt="The cellar" />
+            <div class="row__body">
+              <div class="row__line"><h3>The Cellar</h3><span class="row__dots"></span><span class="row__price">btl</span></div>
+              <p>Full Greek + international list by the bottle. Ask, and settle in.</p>
+            </div>
+          </article>
+        </section>
+
+      </div>
+
+      <a class="card card--cta" href="reservation.html" data-reveal>
+        <span class="card--cta__script">still hungry?</span>
+        <span class="card--cta__title">Book a Table</span>
+        <span class="rail__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Online — Miss Greek · Beach Bar &amp; Grill</title>
+  <meta name="description" content="Your Greek summer, to go. Pickup or delivery from Miss Greek · Beach Bar & Grill, Miami." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Jost:ital,wght@0,300..700;1,300..700&family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body class="page-sub">
+
+  <div class="shell shell--split">
+
+    <!-- ══════════ LEFT · STICKY CARD ══════════ -->
+    <section class="stage stage--side">
+      <div class="stage__media"><img src="images/food/grill-veg.jpg" alt="The spread, packed and ready to travel" /></div>
+      <div class="stage__grade" aria-hidden="true"></div>
+      <canvas class="stage__dust" aria-hidden="true"></canvas>
+      <header class="bar">
+        <button class="bar__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a class="bar__brand" href="index.html">Miss Greek</a>
+        <nav class="bar__links" aria-label="Primary">
+          <a href="menu.html">Menu</a>
+          <a href="order.html" aria-current="page">Order</a>
+          <a href="about.html">About</a>
+        </nav>
+        <a class="bar__cta" href="reservation.html">Book a Table</a>
+      </header>
+
+      <nav class="fold" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order Online</a>
+        <a href="about.html">About</a>
+        <a href="reservation.html">Book a Table</a>
+        <p class="fold__script">see you at sunset</p>
+      </nav>
+
+      <h1 class="stage__title stage__title--page"><span data-reveal>Order</span></h1>
+      <p class="stage__script" data-reveal>your greek summer, to go.</p>
+    </section>
+
+    <!-- ══════════ RIGHT · ORDERING ══════════ -->
+    <div class="flow">
+
+      <div class="card card--pad">
+        <h2 class="flourish"><span>Pickup or Delivery</span></h2>
+        <p class="form-intro" data-reveal>Can't make it to the water? We'll box it up — kraft box, cobalt wax seal, the works. Plates in the middle, even at your place.</p>
+
+        <div class="modes" role="tablist" aria-label="Order type">
+          <button class="mode is-active" role="tab" aria-selected="true" data-mode="pickup">
+            <span class="mode__name">Pickup</span>
+            <span class="mode__meta">Ready in ~20 min · at the host stand</span>
+          </button>
+          <button class="mode" role="tab" aria-selected="false" data-mode="delivery">
+            <span class="mode__name">Delivery</span>
+            <span class="mode__meta">30–45 min · 5-mile radius</span>
+          </button>
+        </div>
+
+        <a class="order-btn" href="#" data-order>Start your order</a>
+        <p class="order-note" data-reveal>Online ordering opens in a new window. Prefer a human? <b>(305) 555-0142</b> — we answer between pours.</p>
+      </div>
+
+      <div class="card card--pad">
+        <h2 class="flourish"><span>Travels Well</span></h2>
+        <p class="form-intro" data-reveal>Some things are better on the beach. These are just as good on your couch.</p>
+
+        <article class="row" data-reveal>
+          <img class="row__thumb" src="images/food/dolmades.jpg" alt="The Big Spread, boxed" />
+          <div class="row__body">
+            <div class="row__line"><h3>The Big Spread, Boxed</h3><span class="row__dots"></span><span class="row__price">$38</span></div>
+            <p>Everything good, in the middle — packed for four. Order it and stop thinking.</p>
+          </div>
+        </article>
+        <article class="row" data-reveal>
+          <img class="row__thumb" src="images/food/gyro.jpg" alt="The Gyro, Untucked" />
+          <div class="row__body">
+            <div class="row__line"><h3>The Gyro, Untucked</h3><span class="row__dots"></span><span class="row__price">$21</span></div>
+            <p>Everything you love, deconstructed and proud of it. Travels like a champion.</p>
+          </div>
+        </article>
+        <article class="row" data-reveal>
+          <img class="row__thumb" src="images/food/octopus.jpg" alt="Chicken Souvla" />
+          <div class="row__body">
+            <div class="row__line"><h3>Chicken Souvla</h3><span class="row__dots"></span><span class="row__price">$28</span></div>
+            <p>Slow-turned, citrus-marinated. Still warm when it lands.</p>
+          </div>
+        </article>
+        <article class="row" data-reveal>
+          <img class="row__thumb" src="images/food/moussaka.jpg" alt="Moussaka" />
+          <div class="row__body">
+            <div class="row__line"><h3>Moussaka</h3><span class="row__dots"></span><span class="row__price">$29</span></div>
+            <p>Layered like a good summer. Reheats better than it has any right to.</p>
+          </div>
+        </article>
+        <article class="row" data-reveal>
+          <img class="row__thumb" src="images/salad-plate.jpg" alt="Greek Salad" />
+          <div class="row__body">
+            <div class="row__line"><h3>Greek Salad, Obviously</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
+            <p>Dressing on the side, because we're not monsters.</p>
+          </div>
+        </article>
+        <article class="row" data-reveal>
+          <img class="row__thumb" src="images/food/baklava2.jpg" alt="Baklava" />
+          <div class="row__body">
+            <div class="row__line"><h3>Baklava</h3><span class="row__dots"></span><span class="row__price">$12</span></div>
+            <p>Forty layers of why-not. Add it. You know you want to.</p>
+          </div>
+        </article>
+
+        <p class="secret" data-reveal><span>family style, family size</span> Feeding a crowd? Ask about the party trays — the Big Spread scaled up, in a market tote you'll keep.</p>
+      </div>
+
+      <div class="card card--pad">
+        <h2 class="flourish"><span>How It Works</span></h2>
+        <ol class="steps">
+          <li data-reveal><span class="steps__n">01</span><div><h3>Build your table</h3><p>Pick your plates. We'd start with the Big Spread and work outward.</p></div></li>
+          <li data-reveal><span class="steps__n">02</span><div><h3>Pickup or delivery</h3><p>Grab it at the host stand, or let it come to you inside five miles.</p></div></li>
+          <li data-reveal><span class="steps__n">03</span><div><h3>Plates in the middle</h3><p>Unpack it, push it to the center, pour something cold. Yamas.</p></div></li>
+        </ol>
+      </div>
+
+      <a class="card card--cta" href="reservation.html" data-reveal>
+        <span class="card--cta__script">or come sit with us?</span>
+        <span class="card--cta__title">Book a Table</span>
+        <span class="rail__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
