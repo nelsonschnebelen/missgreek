@@ -24,6 +24,10 @@ export function siteOrigin() {
   return raw.replace(/\/$/, '');
 }
 
+function pageUrl(origin, slug) {
+  return process.env.NETLIFY === 'true' ? `${origin}/${slug}` : `${origin}/${slug}/`;
+}
+
 export function basePath() {
   const raw = process.env.BASE_PATH;
   if (raw == null || raw === '' || raw === '/') return '/';
@@ -119,11 +123,12 @@ export function menuSchema(html, origin) {
   }
   if (current && (current.items.length || current.description)) sections.push(current);
 
+  const menuUrl = pageUrl(origin, 'menu');
   return {
     '@type': 'Menu',
-    '@id': `${origin}/menu/#menu`,
+    '@id': `${menuUrl}#menu`,
     name: 'Miss Greek menu',
-    url: `${origin}/menu/`,
+    url: menuUrl,
     inLanguage: 'en',
     hasMenuSection: sections.map((section) => {
       const out = { '@type': 'MenuSection', name: section.name };
@@ -141,8 +146,8 @@ function restaurantSchema(origin) {
     name: 'Miss Greek',
     alternateName: 'Miss Greek Beach Bar & Grill',
     url: `${origin}/`,
-    menu: `${origin}/menu/`,
-    hasMenu: `${origin}/menu/`,
+    menu: pageUrl(origin, 'menu'),
+    hasMenu: pageUrl(origin, 'menu'),
     acceptsReservations: true,
     image: `${origin}/images/og.jpg`,
     servesCuisine: 'Greek',
@@ -156,12 +161,16 @@ function jsonLd(data) {
 }
 
 function crawlFiles(origin) {
+  // Netlify's CDN strips the trailing slash before redirects run, so the
+  // canonical path there has no slash. GitHub Pages serves the directory index
+  // at the slashed path.
+  const slash = process.env.NETLIFY === 'true' ? '' : '/';
   const pages = [
     ['/', 'Home'],
-    ['/menu/', 'Menu'],
-    ['/order/', 'Order online'],
-    ['/about/', 'About'],
-    ['/reservations/', 'Book a table'],
+    [`/menu${slash}`, 'Menu'],
+    [`/order${slash}`, 'Order online'],
+    [`/about${slash}`, 'About'],
+    [`/reservations${slash}`, 'Book a table'],
   ];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -238,12 +247,19 @@ export function seoPlugin() {
       order: 'post',
       handler(html, ctx) {
         let out = html.replaceAll('%%SITE%%', origin).replaceAll('%%BASE%%', basePath());
+        if (process.env.NETLIFY === 'true') {
+          for (const slug of ['menu', 'order', 'about', 'reservations']) {
+            out = out.replaceAll(`${origin}/${slug}/`, `${origin}/${slug}`);
+          }
+        }
         const restaurant = restaurantSchema(origin);
         const graph = [restaurant];
         const file = ctx.filename || ctx.path || '';
         if (file.endsWith('menu.html')) {
-          restaurant.hasMenu = { '@id': `${origin}/menu/#menu` };
-          graph.push(menuSchema(out, origin));
+          const menuNode = menuSchema(out, origin);
+          restaurant.menu = menuNode.url;
+          restaurant.hasMenu = { '@id': menuNode['@id'] };
+          graph.push(menuNode);
         }
         const block = `<!-- TODO: Google Business Profile was not verified, so schema omits name-as-listed, street address, telephone, geo, and openingHoursSpecification. Do not guess them. (305) 555-0142 on the order page is a placeholder. Parking is not documented. -->\n${jsonLd({ '@context': 'https://schema.org', '@graph': graph })}`;
         out = out.replace('</head>', `${block}\n</head>`);
@@ -257,13 +273,18 @@ export function seoPlugin() {
     },
     closeBundle() {
       const dist = path.resolve('dist');
+      // Netlify pretty URLs serve /menu from menu.html. A redirect stub at
+      // that filename becomes the page (and can loop with /menu/). GitHub
+      // Pages has no redirect rules, so it still needs the stub files.
+      const onNetlify = process.env.NETLIFY === 'true';
       for (const [file, slug] of CLEAN_PAGES) {
         const from = path.join(dist, file);
         if (!fs.existsSync(from)) continue;
         const html = fs.readFileSync(from, 'utf8');
         fs.mkdirSync(path.join(dist, slug), { recursive: true });
         fs.writeFileSync(path.join(dist, slug, 'index.html'), html);
-        fs.writeFileSync(from, redirectPage(slug, origin));
+        if (onNetlify) fs.rmSync(from);
+        else fs.writeFileSync(from, redirectPage(slug, origin));
       }
     },
   };
