@@ -351,15 +351,39 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--aegean);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: visible;
+  min-width: 0;
+}
+.row__line h3 em {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 0.92em;
 }
 .row__dots { flex: 1; border-bottom: 1px dotted rgba(0, 53, 117, 0.35); transform: translateY(-4px); min-width: 1.5rem; }
 .row__price {
   font-family: var(--font-display);
   font-size: 0.98rem;
   color: var(--ouzo);
+  white-space: nowrap;
+}
+.flourish span { max-width: 22em; text-wrap: balance; }
+.menu-note {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--ink-60);
+  margin: -0.85rem auto 1.45rem;
+  max-width: 40em;
+  line-height: 1.45;
+}
+.menu-note--fine {
+  margin: 2.2rem auto 0.2rem;
+  font-size: 0.78rem;
+  color: var(--ink-40);
+  max-width: 46em;
 }
 .row__body > p {
   margin-top: 0.35rem;

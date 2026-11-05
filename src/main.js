@@ -50,7 +50,7 @@ chips.forEach((chip) => {
     });
 
     if (!reduceMotion && active) {
-      gsap.fromTo(active.querySelectorAll('.row, .flourish, .secret'),
+      gsap.fromTo(active.querySelectorAll('.row, .flourish, .secret, .menu-note'),
         { opacity: 0, y: 18 },
         { opacity: 1, y: 0, duration: 0.5, stagger: 0.045, ease: 'power2.out', overwrite: true, clearProps: 'all' });
     }
