@@ -163,14 +163,18 @@ body.nav-open .bar__burger span:nth-child(2) { opacity: 0; }
 body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
 
 .bar__brand {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--aegean);
-  padding: 0.15rem 0.3rem 0.15rem 0.1rem;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  line-height: 0;
+  /* Clear space ≈ the G in “Greek” (~5% of lockup height) on every side. */
+  padding: 0.28rem 0.45rem;
+}
+.bar__brand img {
+  height: 68px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
 }
 
 .bar__links { display: flex; gap: 1rem; }
@@ -548,7 +552,35 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
 .hours p { font-size: 0.88rem; color: var(--ink-60); max-width: 42em; }
 
 .card--sign { text-align: center; }
-.sign__logo { height: 150px; width: auto; margin-inline: auto; }
+.sign__logo {
+  height: 168px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  margin-inline: auto;
+}
+
+/* ── site footer ─────────────────────────────────────────── */
+
+.site-foot {
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--gap) var(--gap);
+}
+.site-foot a {
+  display: flex;
+  justify-content: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 1.7rem 2.2rem 1.9rem;
+}
+.site-foot img {
+  height: 148px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+}
 .sign__script {
   font-family: var(--font-script);
   font-size: 2.3rem;
@@ -812,6 +844,10 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
   .rail__card { aspect-ratio: 16 / 8; }
   .bar__links, .bar__cta { display: none; }
   .bar { gap: 0.6rem; }
+  .bar__brand { padding: 0.2rem 0.35rem; }
+  .bar__brand img { height: 52px; }
+  .site-foot img { height: 124px; }
+  .site-foot a { padding: 1.35rem 1.5rem 1.5rem; }
   .form__grid, .modes { grid-template-columns: 1fr; }
   .meta { grid-template-columns: 1fr; gap: 1.5rem; }
   .row__line h3 { white-space: normal; }

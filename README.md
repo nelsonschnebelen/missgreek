@@ -46,9 +46,10 @@ To swap in the real faces: drop the font files in `public/fonts/`, add
 `@font-face` rules at the top of `src/style.css`, and update the three
 `--font-*` custom properties in `:root`.
 
-**Logo.** The two-colour lockup lives in `public/images/logo.png`, used on the
-About sign-off card and as the favicon. Per the brand book it is never placed
-bare over imagery — frame it, or keep it on white.
+**Logo.** The lockup lives in `public/images/logo/` (`logo-primary.svg` on light
+panels, `logo-light.svg` for dark grounds, `favicon.svg` plus the 32 and 180
+PNGs). It sits in the header pill, the footer, and the About sign-off. Per the
+brand book it is never placed bare over imagery — frame it, or keep it on white.
 
 ## Develop
 
