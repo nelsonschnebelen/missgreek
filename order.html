@@ -5,20 +5,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Order Online — Miss Greek · Beach Bar &amp; Grill</title>
-  <meta name="description" content="Order Greek plates for pickup or delivery from Miss Greek in Miami Beach. The online checkout link is not connected yet." />
-  <link rel="canonical" href="%%SITE%%/order/" />
+  <meta name="description" content="Order Greek plates for pickup or delivery from Miss Greek in Miami Beach." />
+  <link rel="canonical" href="%%SITE%%/order" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Miss Greek" />
   <meta property="og:title" content="Order Online — Miss Greek · Beach Bar &amp; Grill" />
-  <meta property="og:description" content="Order Greek plates for pickup or delivery from Miss Greek in Miami Beach. The online checkout link is not connected yet." />
-  <meta property="og:url" content="%%SITE%%/order/" />
+  <meta property="og:description" content="Order Greek plates for pickup or delivery from Miss Greek in Miami Beach." />
+  <meta property="og:url" content="%%SITE%%/order" />
   <meta property="og:image" content="%%SITE%%/images/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Order Online — Miss Greek · Beach Bar &amp; Grill" />
-  <meta name="twitter:description" content="Order Greek plates for pickup or delivery from Miss Greek in Miami Beach. The online checkout link is not connected yet." />
+  <meta name="twitter:description" content="Order Greek plates for pickup or delivery from Miss Greek in Miami Beach." />
   <meta name="twitter:image" content="%%SITE%%/images/og.jpg" />
   <link rel="preload" as="image" href="images/food/grill-veg.jpg" fetchpriority="high" />
   <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml" />
@@ -42,19 +42,19 @@
         <button class="bar__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
         <a class="bar__brand" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" /></a>
         <nav class="bar__links" aria-label="Primary">
-          <a href="menu/">Menu</a>
-          <a href="order/" aria-current="page">Order</a>
-          <a href="about/">About</a>
+          <a href="menu">Menu</a>
+          <a href="order" aria-current="page">Order</a>
+          <a href="about">About</a>
         </nav>
-        <a class="bar__cta" href="reservations/">Book a Table</a>
+        <a class="bar__cta" href="reservations">Book a Table</a>
       </header>
 
       <nav class="fold" aria-label="Site">
         <a href="./">Home</a>
-        <a href="menu/">Menu</a>
-        <a href="order/">Order Online</a>
-        <a href="about/">About</a>
-        <a href="reservations/">Book a Table</a>
+        <a href="menu">Menu</a>
+        <a href="order">Order Online</a>
+        <a href="about">About</a>
+        <a href="reservations">Book a Table</a>
         <p class="fold__script">see you at sunset</p>
       </nav>
 
@@ -80,9 +80,7 @@
           </button>
         </div>
 
-        <a class="order-btn" href="#" data-order>Start your order</a>
-                <!-- TODO: (305) 555-0142 is a placeholder number from the README, not a published restaurant phone. -->
-        <p class="order-note" data-reveal>Online ordering opens in a new window. Prefer a human? <b>(305) 555-0142</b> — we answer between pours.</p>
+        <a class="order-btn" data-order hidden>Start your order</a>
       </div>
 
       <div class="card card--pad">
@@ -142,7 +140,7 @@
         </ol>
       </div>
 
-      <a class="card card--cta" href="reservations/" data-reveal>
+      <a class="card card--cta" href="reservations" data-reveal>
         <span class="card--cta__script">or come sit with us?</span>
         <span class="card--cta__title">Book a Table</span>
         <span class="rail__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>

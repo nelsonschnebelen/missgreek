@@ -25,7 +25,7 @@ export function siteOrigin() {
 }
 
 function pageUrl(origin, slug) {
-  return process.env.NETLIFY === 'true' ? `${origin}/${slug}` : `${origin}/${slug}/`;
+  return `${origin}/${slug}`;
 }
 
 export function basePath() {
@@ -161,16 +161,12 @@ function jsonLd(data) {
 }
 
 function crawlFiles(origin) {
-  // Netlify's CDN strips the trailing slash before redirects run, so the
-  // canonical path there has no slash. GitHub Pages serves the directory index
-  // at the slashed path.
-  const slash = process.env.NETLIFY === 'true' ? '' : '/';
   const pages = [
     ['/', 'Home'],
-    [`/menu${slash}`, 'Menu'],
-    [`/order${slash}`, 'Order online'],
-    [`/about${slash}`, 'About'],
-    [`/reservations${slash}`, 'Book a table'],
+    ['/menu', 'Menu'],
+    ['/order', 'Order online'],
+    ['/about', 'About'],
+    ['/reservations', 'Book a table'],
   ];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -199,8 +195,8 @@ Sitemap: ${origin}/sitemap.xml
 
 - Name: Miss Greek · Beach Bar & Grill
 - Cuisine: Greek, with the priced menu published on the menu page
-- Where published: oceanfront at the hotel, Miami Beach, FL. Street address is not published.
-- Hours published on the site: every day from 8 AM. Breakfast 8–11 AM, lunch 12–3 PM, no-hurry hour 3–5 PM, dinner 6–10 PM, then an easy evening from 10 until close. The kitchen winds down at 10. A precise closing time is not published.
+- Where: oceanfront at the hotel, Miami Beach, FL.
+- Hours on the site: every day from 8 AM. Breakfast 8–11 AM, lunch 12–3 PM, no-hurry hour 3–5 PM, dinner 6–10 PM, then an easy evening. The kitchen winds down at 10.
 - Happy hour on the menu: Monday–Thursday 4–7 PM, Friday–Sunday 3–6 PM.
 - Reservations: recommended for sunset. Walk-ins are welcome; the door doesn't check names.
 - Gluten-free note from the menu: pita and sandwiches can be a collard green wrap for +3, served with fries.
@@ -211,12 +207,6 @@ Sitemap: ${origin}/sitemap.xml
 ## Pages
 
 ${pages.map(([path, label]) => `- [${label}](${origin}${path})`).join('\n')}
-
-## Not yet published
-
-- Google Business Profile URL. Name, street address, phone, and hours are omitted from JSON-LD until that listing can be checked. Do not copy the site's dayparts or the placeholder (305) 555-0142 into schema.
-- Parking
-- TikTok and Facebook URLs (icons on the home page are not linked)
 `;
   return { sitemap, robots, llms };
 }
@@ -247,11 +237,7 @@ export function seoPlugin() {
       order: 'post',
       handler(html, ctx) {
         let out = html.replaceAll('%%SITE%%', origin).replaceAll('%%BASE%%', basePath());
-        if (process.env.NETLIFY === 'true') {
-          for (const slug of ['menu', 'order', 'about', 'reservations']) {
-            out = out.replaceAll(`${origin}/${slug}/`, `${origin}/${slug}`);
-          }
-        }
+        out = out.replace(/<!--[\s\S]*?-->/g, '');
         const restaurant = restaurantSchema(origin);
         const graph = [restaurant];
         const file = ctx.filename || ctx.path || '';
@@ -261,7 +247,7 @@ export function seoPlugin() {
           restaurant.hasMenu = { '@id': menuNode['@id'] };
           graph.push(menuNode);
         }
-        const block = `<!-- TODO: Google Business Profile was not verified, so schema omits name-as-listed, street address, telephone, geo, and openingHoursSpecification. Do not guess them. (305) 555-0142 on the order page is a placeholder. Parking is not documented. -->\n${jsonLd({ '@context': 'https://schema.org', '@graph': graph })}`;
+        const block = jsonLd({ '@context': 'https://schema.org', '@graph': graph });
         out = out.replace('</head>', `${block}\n</head>`);
         return out;
       },

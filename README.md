@@ -67,11 +67,14 @@ npm run build
 
 ## Placeholders to replace before launch
 
-- **Photography** — all imagery is Unsplash stock. The brand book's shot list
-  (hands pouring, bracelets in frame, her back walking to the next table,
-  golden hour) should replace it.
-- **Online ordering** — `order.html` "Start your order" is a UI placeholder.
-  Wire it to the provider (Toast / ChowNow / Olo) when the account exists.
-- **Reservations** — `reservation.html` form is front-end only. Point it at
-  Resy / OpenTable / SevenRooms, or a backend endpoint.
-- **Phone, address, social handles** — currently placeholder values.
+- **Photography** — heroes and the about mosaic use the approved Instagram set.
+  Menu dishes without a matching photo still use stock.
+- **Online ordering** — "Start your order" stays in the markup and stays hidden
+  until `ORDER_URL` in `src/main.js` is a real provider link.
+- **Reservations** — the form posts to Netlify Forms (`name="reservation"`).
+- **Phone** — the order page does not show a phone line. Add one only after
+  Carol confirms the number. Do not publish (305) 331-9275 or any stand-in.
+- **Address, hours, map, parking** — omitted from the pages and from Restaurant
+  JSON-LD until the Google Business Profile listing is confirmed.
+- **TikTok and Facebook** — the icons stay in the home markup and stay hidden
+  until `SOCIAL_URLS` in `src/main.js` has real URLs. Instagram is linked.

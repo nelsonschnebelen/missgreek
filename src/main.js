@@ -69,22 +69,53 @@ modes.forEach((mode) => {
   });
 });
 
-/* placeholder until the ordering provider link is wired */
-document.querySelector('[data-order]')?.addEventListener('click', (e) => {
-  e.preventDefault();
-  const btn = e.currentTarget;
-  const mode = document.querySelector('.mode.is-active')?.dataset.mode ?? 'pickup';
-  const original = btn.textContent;
-  btn.textContent = mode === 'pickup' ? 'Pickup — coming right up' : 'Delivery — on its way';
-  setTimeout(() => { btn.textContent = original; }, 2400);
+/* Set ORDER_URL when the ordering provider link exists. The button stays in the page and stays hidden until then. */
+const ORDER_URL = '';
+const orderBtn = document.querySelector('[data-order]');
+if (orderBtn && ORDER_URL) {
+  orderBtn.href = ORDER_URL;
+  orderBtn.hidden = false;
+  orderBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const mode = document.querySelector('.mode.is-active')?.dataset.mode ?? 'pickup';
+    const original = orderBtn.textContent;
+    orderBtn.textContent = mode === 'pickup' ? 'Pickup — coming right up' : 'Delivery — on its way';
+    setTimeout(() => { orderBtn.textContent = original; }, 2400);
+  });
+}
+
+/* Set a URL to show that icon. Instagram is linked in the HTML. */
+const SOCIAL_URLS = { tiktok: '', facebook: '' };
+document.querySelectorAll('[data-social]').forEach((link) => {
+  const url = SOCIAL_URLS[link.dataset.social];
+  if (!url) return;
+  link.href = url;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.hidden = false;
 });
 
-/* ── reservation form (placeholder until a booking link) ── */
+/* ── reservation form → Netlify Forms ── */
 const form = document.querySelector('[data-reserve]');
-form?.addEventListener('submit', (e) => {
+form?.addEventListener('submit', async (e) => {
+  if (typeof fetch !== 'function') return;
   e.preventDefault();
-  form.querySelector('.form__submit').style.display = 'none';
-  form.querySelector('.form__done').hidden = false;
+  const submit = form.querySelector('.form__submit');
+  const done = form.querySelector('.form__done');
+  const body = new URLSearchParams(new FormData(form)).toString();
+  try {
+    const res = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body,
+    });
+    if (!res.ok) throw new Error('form');
+    submit.hidden = true;
+    done.hidden = false;
+    done.focus?.();
+  } catch {
+    form.submit();
+  }
 });
 
 /* ── entrance + scroll motion ──────────────────────────── */
@@ -99,7 +130,7 @@ if (!reduceMotion) {
       opacity: 0, y: 14, duration: 0.7, stagger: 0.08, ease: 'power3.out',
     }, '-=0.6')
     .from('.rail__card', {
-      opacity: 0, x: 26, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      opacity: 0, y: 26, duration: 0.8, stagger: 0.1, ease: 'power3.out',
     }, '-=0.55');
 
   /* Simple [data-reveal] fades are CSS scroll-driven animations.
