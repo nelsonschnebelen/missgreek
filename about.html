@@ -1,11 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <base href="%%BASE%%" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Miss Greek · Beach Bar &amp; Grill</title>
-  <meta name="description" content="A mood, not a mascot. Part Aegean, part Miami, all heart, no hurry." />
-  <link rel="icon" type="image/png" href="images/logo.png" />
+  <meta name="description" content="Miss Greek is a mood, not a mascot. Part Aegean, part Miami. Hours, the sunset toast, and the long lunch." />
+  <link rel="canonical" href="%%SITE%%/about" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Miss Greek" />
+  <meta property="og:title" content="About — Miss Greek · Beach Bar &amp; Grill" />
+  <meta property="og:description" content="Miss Greek is a mood, not a mascot. Part Aegean, part Miami. Hours, the sunset toast, and the long lunch." />
+  <meta property="og:url" content="%%SITE%%/about" />
+  <meta property="og:image" content="%%SITE%%/images/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About — Miss Greek · Beach Bar &amp; Grill" />
+  <meta name="twitter:description" content="Miss Greek is a mood, not a mascot. Part Aegean, part Miami. Hours, the sunset toast, and the long lunch." />
+  <meta name="twitter:image" content="%%SITE%%/images/og.jpg" />
+  <link rel="preload" as="image" href="images/real/friends-table.webp" fetchpriority="high" />
+  <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="images/logo/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="images/logo/favicon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Jost:ital,wght@0,300..700;1,300..700&family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
@@ -13,30 +31,30 @@
 </head>
 <body class="page-sub">
 
-  <div class="shell shell--split">
+  <main class="shell shell--split">
 
     <!-- ══════════ LEFT · STICKY CARD ══════════ -->
     <section class="stage stage--side">
-      <div class="stage__media"><img src="images/friends-cheers.jpg" alt="Friends, the sea, nobody headed home" /></div>
+      <div class="stage__media"><img src="images/real/friends-table.webp" srcset="images/real/friends-table-800.webp 800w, images/real/friends-table.webp 1136w" sizes="(max-width: 980px) 100vw, 58vw" alt="Friends sharing a meal at a wooden table by the sea" width="1136" height="1408" fetchpriority="high" decoding="async"></div>
       <div class="stage__grade" aria-hidden="true"></div>
       <canvas class="stage__dust" aria-hidden="true"></canvas>
       <header class="bar">
         <button class="bar__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-        <a class="bar__brand" href="index.html">Miss Greek</a>
+        <a class="bar__brand" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" /></a>
         <nav class="bar__links" aria-label="Primary">
-          <a href="menu.html">Menu</a>
-          <a href="order.html">Order</a>
-          <a href="about.html" aria-current="page">About</a>
+          <a href="menu">Menu</a>
+          <a href="order">Order</a>
+          <a href="about" aria-current="page">About</a>
         </nav>
-        <a class="bar__cta" href="reservation.html">Book a Table</a>
+        <a class="bar__cta" href="reservations">Book a Table</a>
       </header>
 
       <nav class="fold" aria-label="Site">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="order.html">Order Online</a>
-        <a href="about.html">About</a>
-        <a href="reservation.html">Book a Table</a>
+        <a href="./">Home</a>
+        <a href="menu">Menu</a>
+        <a href="order">Order Online</a>
+        <a href="about">About</a>
+        <a href="reservations">Book a Table</a>
         <p class="fold__script">see you at sunset</p>
       </nav>
       <h1 class="stage__title stage__title--page"><span data-reveal>About</span></h1>
@@ -57,16 +75,16 @@
             <p class="prose__script">she doesn't do fine dining. she does long dining.</p>
           </div>
           <div class="prose-flex__art" data-reveal>
-            <img src="images/dancers.png" alt="Three dancers in cobalt and coral — the Miss Greek illustration" />
+            <img src="images/dancers.png" alt="Three dancers in cobalt and coral — the Miss Greek illustration" width="1123" height="1226" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
 
       <div class="mosaic">
-        <img src="images/wine-pour.jpg" alt="Hands pouring wine, bracelets in frame" data-reveal />
-        <img src="images/food/grill-veg.jpg" alt="From the fire" data-reveal />
-        <img src="images/guitar.jpg" alt="An acoustic guitar at golden hour" data-reveal />
-        <img src="images/beach-chairs.jpg" alt="The beach out front" data-reveal />
+        <img src="images/real/cocktail.webp" srcset="images/real/cocktail-800.webp 800w, images/real/cocktail.webp 1136w" sizes="(max-width: 980px) 50vw, 24vw" alt="Two citrus cocktails and a dish of olives beside clear water" data-reveal width="1136" height="1408" loading="lazy" decoding="async">
+        <img src="images/real/olives-bread.webp" srcset="images/real/olives-bread-800.webp 800w, images/real/olives-bread.webp 1152w" sizes="(max-width: 980px) 50vw, 24vw" alt="Bread, olive oil, and a bowl of green olives" data-reveal width="1152" height="1376" loading="lazy" decoding="async">
+        <img src="images/guitar.jpg" alt="An acoustic guitar at golden hour" data-reveal width="1600" height="1067" loading="lazy" decoding="async">
+        <img src="images/real/sea-water.webp" srcset="images/real/sea-water-800.webp 800w, images/real/sea-water.webp 944w" sizes="(max-width: 980px) 100vw, 40vw" alt="Sun sparkling on the open water" data-reveal width="944" height="1200" loading="lazy" decoding="async">
       </div>
 
       <div class="card card--pad">
@@ -111,7 +129,7 @@
         <h2 class="flourish"><span>Open All Day</span></h2>
         <ul class="hours">
           <li data-reveal><span>8–11 AM</span><div><h3>Breakfast</h3><p>Slow mornings, sea air. Yogurt with thyme honey, eggs with feta &amp; tomato, strong coffee.</p></div></li>
-          <li data-reveal><span>12–3 PM</span><div><h3>Lunch</h3><p>The long lunch. The Big Spread, grilled fish, cold wine. Tables turn into afternoons.</p></div></li>
+          <li data-reveal><span>12–3 PM</span><div><h3>Lunch</h3><p>The long lunch. Spreads, grilled fish, cold wine. Tables turn into afternoons.</p></div></li>
           <li data-reveal><span>3–5 PM</span><div><h3>No-Hurry Hour</h3><p>The bit we built. The sand timer flips, the afternoon takes a breath.</p></div></li>
           <li data-reveal><span>6–10 PM</span><div><h3>Dinner</h3><p>The table fills. The Sunset Toast, the grills, gentle live music. The heart of the day.</p></div></li>
           <li data-reveal><span>10–close</span><div><h3>Easy Evening</h3><p>Last pours, candlelight, a quiet close. We end soft — golden, never a club.</p></div></li>
@@ -119,13 +137,17 @@
       </div>
 
       <div class="card card--pad card--sign" data-reveal>
-        <img class="sign__logo" src="images/logo.png" alt="Miss Greek · Beach Bar &amp; Grill" />
+        <img class="sign__logo" src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" />
         <p class="sign__script">see you at sunset</p>
         <p class="sign__line">Come hungry. Stay late. Yamas.</p>
       </div>
 
     </div>
-  </div>
+  </main>
+
+  <footer class="site-foot">
+    <a href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" loading="lazy" decoding="async"></a>
+  </footer>
 
   <script type="module" src="./src/main.js"></script>
 </body>

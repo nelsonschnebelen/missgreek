@@ -1,0 +1,67 @@
+# Netlify treats /menu and /menu.html as the same path. The build therefore
+# does not publish menu.html (or order.html, about.html, reservation.html)
+# when NETLIFY=true. These rules send the old URLs to the extensionless page,
+# and force the extensionless path to the directory index so a leftover stub
+# cannot win. /menu and /menu/ are the same path to this engine (the CDN
+# strips the slash first); do not 301 one to the other or it loops.
+# GitHub Pages does not read this file. It still gets the .html redirect stubs.
+
+[[redirects]]
+  from = "/menu.html"
+  to = "/menu"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/order.html"
+  to = "/order"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reservation.html"
+  to = "/reservations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reservations.html"
+  to = "/reservations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/menu"
+  to = "/menu/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/order"
+  to = "/order/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/about"
+  to = "/about/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/reservations"
+  to = "/reservations/index.html"
+  status = 200
+  force = true

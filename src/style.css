@@ -42,10 +42,14 @@ body {
   color: var(--ink);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
+@supports (text-decoration-inset: 1px) {
+  a { text-decoration-inset: 0.08em; }
+}
 ul, ol { list-style: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 
@@ -53,6 +57,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ── shell ───────────────────────────────────────────────── */
 
+.shell > * { min-width: 0; }
 .shell {
   display: grid;
   grid-template-columns: 1.55fr 1fr;
@@ -83,7 +88,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   height: calc(100svh - 2 * var(--gap));
   min-height: 0;
 }
-.stage__media { position: absolute; inset: 0; z-index: -2; }
+.stage__media { position: absolute; inset: 0; z-index: -2; overflow: clip; }
 .stage__media img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); }
 .stage__grade {
   position: absolute; inset: 0; z-index: -1;
@@ -163,14 +168,18 @@ body.nav-open .bar__burger span:nth-child(2) { opacity: 0; }
 body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
 
 .bar__brand {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--aegean);
-  padding: 0.15rem 0.3rem 0.15rem 0.1rem;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  line-height: 0;
+  /* Clear space ≈ the G in “Greek” (~5% of lockup height) on every side. */
+  padding: 0.28rem 0.45rem;
+}
+.bar__brand img {
+  height: 68px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
 }
 
 .bar__links { display: flex; gap: 1rem; }
@@ -261,9 +270,13 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
 
 .card {
   background: var(--paper);
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: var(--r);
   box-shadow: 0 18px 44px -36px rgba(0, 53, 117, 0.35);
+}
+@supports (corner: 1px round) {
+  .card { corner: var(--r) round; }
 }
 .card--pad { padding: clamp(1.5rem, 3.5vw, 2.8rem); }
 
@@ -320,6 +333,7 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
 
 .row {
   display: flex;
+  min-width: 0;
   gap: 1.1rem;
   align-items: flex-start;
   padding: 0.95rem 0.4rem;
@@ -351,15 +365,39 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--aegean);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.row__line h3 em {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 0.92em;
 }
 .row__dots { flex: 1; border-bottom: 1px dotted rgba(0, 53, 117, 0.35); transform: translateY(-4px); min-width: 1.5rem; }
 .row__price {
   font-family: var(--font-display);
   font-size: 0.98rem;
   color: var(--ouzo);
+  white-space: nowrap;
+}
+.flourish span { max-width: 22em; text-wrap: balance; }
+.menu-note {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--ink-60);
+  margin: -0.85rem auto 1.45rem;
+  max-width: 40em;
+  line-height: 1.45;
+}
+.menu-note--fine {
+  margin: 2.2rem auto 0.2rem;
+  font-size: 0.78rem;
+  color: var(--ink-40);
+  max-width: 46em;
 }
 .row__body > p {
   margin-top: 0.35rem;
@@ -524,7 +562,51 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
 .hours p { font-size: 0.88rem; color: var(--ink-60); max-width: 42em; }
 
 .card--sign { text-align: center; }
-.sign__logo { height: 150px; width: auto; margin-inline: auto; }
+.sign__logo {
+  height: 168px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  margin-inline: auto;
+}
+
+/* ── site footer ─────────────────────────────────────────── */
+
+.site-foot {
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--gap) var(--gap);
+}
+.site-foot a {
+  display: flex;
+  justify-content: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 1.7rem 2.2rem 1.9rem;
+}
+.site-foot img {
+  height: 148px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+}
+
+.faq { display: grid; gap: 1.15rem; }
+.faq h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--aegean);
+}
+.faq p {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--ink-60);
+  max-width: 42em;
+}
 .sign__script {
   font-family: var(--font-script);
   font-size: 2.3rem;
@@ -654,6 +736,8 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
   vertical-align: middle;
 }
 
+.order-btn[hidden],
+.stage__socials a[hidden] { display: none; }
 .order-btn {
   display: block;
   text-align: center;
@@ -782,17 +866,42 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
 @media (max-width: 980px) {
   :root { --arch: 120px; }
   .shell, .shell--split { grid-template-columns: 1fr; }
+  .page-home .stage { padding-bottom: 4.6rem; }
+  .page-home .stage__script { max-width: 16em; }
   .stage { min-height: 72svh; }
   .shell--split .stage--side { position: relative; top: 0; height: auto; min-height: 46svh; }
-  .rail { min-height: 0; grid-template-rows: none; }
-  .rail__card { aspect-ratio: 16 / 8; }
+  .rail { min-height: 0; min-width: 0; grid-template-rows: none; }
+  .rail__card { aspect-ratio: 16 / 8; min-height: 0; min-width: 0; max-width: 100%; }
   .bar__links, .bar__cta { display: none; }
   .bar { gap: 0.6rem; }
+  .bar__brand { padding: 0.2rem 0.35rem; }
+  .bar__brand img { height: 52px; }
+  .site-foot img { height: 124px; }
+  .site-foot a { padding: 1.35rem 1.5rem 1.5rem; }
   .form__grid, .modes { grid-template-columns: 1fr; }
   .meta { grid-template-columns: 1fr; gap: 1.5rem; }
   .row__line h3 { white-space: normal; }
   .prose-flex { grid-template-columns: 1fr; }
   .prose-flex__art { margin-inline: auto; }
+}
+
+/* Simple reveals. Browsers without scroll timelines just show the content.
+   Stage and rail reveals stay with the GSAP load-in, not a second fade. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    html:not(.is-static) [data-reveal]:not(.stage [data-reveal]):not(.rail [data-reveal]) {
+      animation-name: mg-reveal;
+      animation-duration: 0.8s;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 35%;
+    }
+  }
+}
+@keyframes mg-reveal {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

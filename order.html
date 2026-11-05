@@ -1,11 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <base href="%%BASE%%" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Order Online — Miss Greek · Beach Bar &amp; Grill</title>
-  <meta name="description" content="Your Greek summer, to go. Pickup or delivery from Miss Greek · Beach Bar & Grill, Miami." />
-  <link rel="icon" type="image/png" href="images/logo.png" />
+  <meta name="description" content="Order Greek plates for pickup or delivery from Miss Greek in Miami Beach." />
+  <link rel="canonical" href="%%SITE%%/order" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Miss Greek" />
+  <meta property="og:title" content="Order Online — Miss Greek · Beach Bar &amp; Grill" />
+  <meta property="og:description" content="Order Greek plates for pickup or delivery from Miss Greek in Miami Beach." />
+  <meta property="og:url" content="%%SITE%%/order" />
+  <meta property="og:image" content="%%SITE%%/images/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Order Online — Miss Greek · Beach Bar &amp; Grill" />
+  <meta name="twitter:description" content="Order Greek plates for pickup or delivery from Miss Greek in Miami Beach." />
+  <meta name="twitter:image" content="%%SITE%%/images/og.jpg" />
+  <link rel="preload" as="image" href="images/food/grill-veg.jpg" fetchpriority="high" />
+  <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="images/logo/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="images/logo/favicon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Jost:ital,wght@0,300..700;1,300..700&family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
@@ -13,30 +31,30 @@
 </head>
 <body class="page-sub">
 
-  <div class="shell shell--split">
+  <main class="shell shell--split">
 
     <!-- ══════════ LEFT · STICKY CARD ══════════ -->
     <section class="stage stage--side">
-      <div class="stage__media"><img src="images/food/grill-veg.jpg" alt="The spread, packed and ready to travel" /></div>
+      <div class="stage__media"><img src="images/food/grill-veg.jpg" alt="A mixed grill of skewers, sausage, potatoes, and sauces" width="800" height="1200" fetchpriority="high" decoding="async"></div>
       <div class="stage__grade" aria-hidden="true"></div>
       <canvas class="stage__dust" aria-hidden="true"></canvas>
       <header class="bar">
         <button class="bar__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-        <a class="bar__brand" href="index.html">Miss Greek</a>
+        <a class="bar__brand" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" /></a>
         <nav class="bar__links" aria-label="Primary">
-          <a href="menu.html">Menu</a>
-          <a href="order.html" aria-current="page">Order</a>
-          <a href="about.html">About</a>
+          <a href="menu">Menu</a>
+          <a href="order" aria-current="page">Order</a>
+          <a href="about">About</a>
         </nav>
-        <a class="bar__cta" href="reservation.html">Book a Table</a>
+        <a class="bar__cta" href="reservations">Book a Table</a>
       </header>
 
       <nav class="fold" aria-label="Site">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="order.html">Order Online</a>
-        <a href="about.html">About</a>
-        <a href="reservation.html">Book a Table</a>
+        <a href="./">Home</a>
+        <a href="menu">Menu</a>
+        <a href="order">Order Online</a>
+        <a href="about">About</a>
+        <a href="reservations">Book a Table</a>
         <p class="fold__script">see you at sunset</p>
       </nav>
 
@@ -62,8 +80,7 @@
           </button>
         </div>
 
-        <a class="order-btn" href="#" data-order>Start your order</a>
-        <p class="order-note" data-reveal>Online ordering opens in a new window. Prefer a human? <b>(305) 555-0142</b> — we answer between pours.</p>
+        <a class="order-btn" data-order hidden>Start your order</a>
       </div>
 
       <div class="card card--pad">
@@ -71,68 +88,70 @@
         <p class="form-intro" data-reveal>Some things are better on the beach. These are just as good on your couch.</p>
 
         <article class="row" data-reveal>
-          <img class="row__thumb" src="images/food/dolmades.jpg" alt="The Big Spread, boxed" />
+          <img class="row__thumb" src="images/food/gyro.jpg" alt="Chicken Gyro Pita" width="800" height="530" loading="lazy" decoding="async">
           <div class="row__body">
-            <div class="row__line"><h3>The Big Spread, Boxed</h3><span class="row__dots"></span><span class="row__price">$38</span></div>
-            <p>Everything good, in the middle — packed for four. Order it and stop thinking.</p>
+            <div class="row__line"><h3>Chicken Gyro Pita</h3><span class="row__dots"></span><span class="row__price">$19</span></div>
+            <p>Onion, tomato, tzatziki, open face</p>
           </div>
         </article>
         <article class="row" data-reveal>
-          <img class="row__thumb" src="images/food/gyro.jpg" alt="The Gyro, Untucked" />
+          <img class="row__thumb" src="images/food/octopus.jpg" alt="Chicken Kebab" width="800" height="489" loading="lazy" decoding="async">
           <div class="row__body">
-            <div class="row__line"><h3>The Gyro, Untucked</h3><span class="row__dots"></span><span class="row__price">$21</span></div>
-            <p>Everything you love, deconstructed and proud of it. Travels like a champion.</p>
+            <div class="row__line"><h3>Chicken Kebab</h3><span class="row__dots"></span><span class="row__price">$24</span></div>
           </div>
         </article>
         <article class="row" data-reveal>
-          <img class="row__thumb" src="images/food/octopus.jpg" alt="Chicken Souvla" />
+          <img class="row__thumb" src="images/food/moussaka.jpg" alt="Moussaka" width="800" height="1067" loading="lazy" decoding="async">
           <div class="row__body">
-            <div class="row__line"><h3>Chicken Souvla</h3><span class="row__dots"></span><span class="row__price">$28</span></div>
-            <p>Slow-turned, citrus-marinated. Still warm when it lands.</p>
+            <div class="row__line"><h3>Moussaka</h3><span class="row__dots"></span><span class="row__price">$24</span></div>
+            <p>Eggplant, tomato, béchamel</p>
           </div>
         </article>
         <article class="row" data-reveal>
-          <img class="row__thumb" src="images/food/moussaka.jpg" alt="Moussaka" />
           <div class="row__body">
-            <div class="row__line"><h3>Moussaka</h3><span class="row__dots"></span><span class="row__price">$29</span></div>
-            <p>Layered like a good summer. Reheats better than it has any right to.</p>
+            <div class="row__line"><h3>Greek Village Salad <em>horiatiki</em></h3><span class="row__dots"></span><span class="row__price">$18</span></div>
+            <p>Tomato, cucumber, feta, kalamata, red onion, green pepper</p>
           </div>
         </article>
         <article class="row" data-reveal>
-          <img class="row__thumb" src="images/salad-plate.jpg" alt="Greek Salad" />
+          <img class="row__thumb" src="images/food/shrimp.jpg" alt="Garlic Shrimp" width="800" height="534" loading="lazy" decoding="async">
           <div class="row__body">
-            <div class="row__line"><h3>Greek Salad, Obviously</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
-            <p>Dressing on the side, because we're not monsters.</p>
+            <div class="row__line"><h3>Garlic Shrimp</h3><span class="row__dots"></span><span class="row__price">$36</span></div>
+            <p>Roasted garlic, olive oil, pita</p>
           </div>
         </article>
         <article class="row" data-reveal>
-          <img class="row__thumb" src="images/food/baklava2.jpg" alt="Baklava" />
+          <img class="row__thumb" src="images/food/baklava2.jpg" alt="Pistachio Baklava" width="800" height="533" loading="lazy" decoding="async">
           <div class="row__body">
-            <div class="row__line"><h3>Baklava</h3><span class="row__dots"></span><span class="row__price">$12</span></div>
-            <p>Forty layers of why-not. Add it. You know you want to.</p>
+            <div class="row__line"><h3>Pistachio Baklava</h3><span class="row__dots"></span><span class="row__price">$13</span></div>
+            <p>Layered phyllo, Sicilian pistachios, Greek honey syrup</p>
           </div>
         </article>
 
-        <p class="secret" data-reveal><span>family style, family size</span> Feeding a crowd? Ask about the party trays — the Big Spread scaled up, in a market tote you'll keep.</p>
+        <p class="secret" data-reveal><span>family style, family size</span> Feeding a crowd? The Meat Platter, Seafood Platter, and Miss Greek Platter are made for the table.</p>
       </div>
 
       <div class="card card--pad">
         <h2 class="flourish"><span>How It Works</span></h2>
         <ol class="steps">
-          <li data-reveal><span class="steps__n">01</span><div><h3>Build your table</h3><p>Pick your plates. We'd start with the Big Spread and work outward.</p></div></li>
+          <li data-reveal><span class="steps__n">01</span><div><h3>Build your table</h3><p>Pick your plates. We'd start with the spreads and work outward.</p></div></li>
           <li data-reveal><span class="steps__n">02</span><div><h3>Pickup or delivery</h3><p>Grab it at the host stand, or let it come to you inside five miles.</p></div></li>
           <li data-reveal><span class="steps__n">03</span><div><h3>Plates in the middle</h3><p>Unpack it, push it to the center, pour something cold. Yamas.</p></div></li>
         </ol>
       </div>
 
-      <a class="card card--cta" href="reservation.html" data-reveal>
+      <a class="card card--cta" href="reservations" data-reveal>
         <span class="card--cta__script">or come sit with us?</span>
         <span class="card--cta__title">Book a Table</span>
         <span class="rail__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
 
     </div>
-  </div>
+  </main>
+
+  <footer class="site-foot">
+    <a href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" loading="lazy" decoding="async"></a>
+  </footer>
 
   <script type="module" src="./src/main.js"></script>
 </body>
