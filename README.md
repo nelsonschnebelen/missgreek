@@ -72,9 +72,9 @@ npm run build
 - **Online ordering** — "Start your order" stays in the markup and stays hidden
   until `ORDER_URL` in `src/main.js` is a real provider link.
 - **Reservations** — the form posts to Netlify Forms (`name="reservation"`).
-- **Phone** — the order page does not show a phone line. Add one only after
-  Carol confirms the number. Do not publish (305) 331-9275 or any stand-in.
-- **Address, hours, map, parking** — omitted from the pages and from Restaurant
-  JSON-LD until the Google Business Profile listing is confirmed.
+- **Phone** — (305) 332-6933 on the order line, footer, reservations, and
+  Restaurant JSON-LD. Do not publish (305) 331-9275, (305) 555-0142, or any stand-in.
+- **Address** — 1401 Collins Ave, Miami Beach, FL 33139, with a Google Maps
+  directions link. Do not publish opening hours or “Temporarily closed”.
 - **TikTok and Facebook** — the icons stay in the home markup and stay hidden
   until `SOCIAL_URLS` in `src/main.js` has real URLs. Instagram is linked.

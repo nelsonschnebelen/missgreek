@@ -139,6 +139,8 @@ export function menuSchema(html, origin) {
   };
 }
 
+const MAPS_DIRECTIONS = 'https://www.google.com/maps/dir/?api=1&destination=1401+Collins+Ave,+Miami+Beach,+FL+33139';
+
 function restaurantSchema(origin) {
   return {
     '@type': 'Restaurant',
@@ -150,7 +152,17 @@ function restaurantSchema(origin) {
     hasMenu: pageUrl(origin, 'menu'),
     acceptsReservations: true,
     image: `${origin}/images/og.jpg`,
-    servesCuisine: 'Greek',
+    servesCuisine: ['Greek', 'Mediterranean'],
+    telephone: '+1-305-332-6933',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '1401 Collins Ave',
+      addressLocality: 'Miami Beach',
+      addressRegion: 'FL',
+      postalCode: '33139',
+      addressCountry: 'US',
+    },
+    hasMap: MAPS_DIRECTIONS,
     priceRange: '$3–$205',
     sameAs: ['https://www.instagram.com/miss.greek/'],
   };
@@ -194,9 +206,10 @@ Sitemap: ${origin}/sitemap.xml
 ## Key facts
 
 - Name: Miss Greek · Beach Bar & Grill
-- Cuisine: Greek, with the priced menu published on the menu page
-- Where: oceanfront at the hotel, Miami Beach, FL.
-- Hours on the site: every day from 8 AM. Breakfast 8–11 AM, lunch 12–3 PM, no-hurry hour 3–5 PM, dinner 6–10 PM, then an easy evening. The kitchen winds down at 10.
+- Cuisine: Greek / Mediterranean, with the priced menu published on the menu page
+- Where: 1401 Collins Ave, Miami Beach, FL 33139.
+- Phone: (305) 332-6933
+- Directions: ${MAPS_DIRECTIONS}
 - Happy hour on the menu: Monday–Thursday 4–7 PM, Friday–Sunday 3–6 PM.
 - Reservations: recommended for sunset. Walk-ins are welcome; the door doesn't check names.
 - Gluten-free note from the menu: pita and sandwiches can be a collard green wrap for +3, served with fries.
