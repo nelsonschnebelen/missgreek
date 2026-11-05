@@ -4,7 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Miss Greek · Beach Bar &amp; Grill</title>
-  <meta name="description" content="A mood, not a mascot. Part Aegean, part Miami, all heart, no hurry." />
+  <meta name="description" content="Miss Greek is a mood, not a mascot. Part Aegean, part Miami. Hours, the sunset toast, and the long lunch." />
+  <link rel="canonical" href="%%SITE%%/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Miss Greek" />
+  <meta property="og:title" content="About — Miss Greek · Beach Bar &amp; Grill" />
+  <meta property="og:description" content="Miss Greek is a mood, not a mascot. Part Aegean, part Miami. Hours, the sunset toast, and the long lunch." />
+  <meta property="og:url" content="%%SITE%%/about.html" />
+  <meta property="og:image" content="%%SITE%%/images/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About — Miss Greek · Beach Bar &amp; Grill" />
+  <meta name="twitter:description" content="Miss Greek is a mood, not a mascot. Part Aegean, part Miami. Hours, the sunset toast, and the long lunch." />
+  <meta name="twitter:image" content="%%SITE%%/images/og.jpg" />
+  <link rel="preload" as="image" href="images/real/friends-table.webp" fetchpriority="high" />
   <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="images/logo/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" href="images/logo/favicon-180.png" />
@@ -15,11 +30,11 @@
 </head>
 <body class="page-sub">
 
-  <div class="shell shell--split">
+  <main class="shell shell--split">
 
     <!-- ══════════ LEFT · STICKY CARD ══════════ -->
     <section class="stage stage--side">
-      <div class="stage__media"><img src="images/real/friends-table.webp" alt="Friends sharing a meal at a wooden table by the sea" /></div>
+      <div class="stage__media"><img src="images/real/friends-table.webp" srcset="images/real/friends-table-800.webp 800w, images/real/friends-table.webp 1136w" sizes="(max-width: 980px) 100vw, 58vw" alt="Friends sharing a meal at a wooden table by the sea" width="1136" height="1408" fetchpriority="high" decoding="async"></div>
       <div class="stage__grade" aria-hidden="true"></div>
       <canvas class="stage__dust" aria-hidden="true"></canvas>
       <header class="bar">
@@ -59,16 +74,16 @@
             <p class="prose__script">she doesn't do fine dining. she does long dining.</p>
           </div>
           <div class="prose-flex__art" data-reveal>
-            <img src="images/dancers.png" alt="Three dancers in cobalt and coral — the Miss Greek illustration" />
+            <img src="images/dancers.png" alt="Three dancers in cobalt and coral — the Miss Greek illustration" width="1123" height="1226" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
 
       <div class="mosaic">
-        <img src="images/real/cocktail.webp" alt="Two citrus cocktails and a dish of olives beside clear water" data-reveal />
-        <img src="images/real/olives-bread.webp" alt="Bread, olive oil, and a bowl of green olives" data-reveal />
-        <img src="images/guitar.jpg" alt="An acoustic guitar at golden hour" data-reveal />
-        <img src="images/real/sea-water.webp" alt="Sun sparkling on the open water" data-reveal />
+        <img src="images/real/cocktail.webp" srcset="images/real/cocktail-800.webp 800w, images/real/cocktail.webp 1136w" sizes="(max-width: 980px) 50vw, 24vw" alt="Two citrus cocktails and a dish of olives beside clear water" data-reveal width="1136" height="1408" loading="lazy" decoding="async">
+        <img src="images/real/olives-bread.webp" srcset="images/real/olives-bread-800.webp 800w, images/real/olives-bread.webp 1152w" sizes="(max-width: 980px) 50vw, 24vw" alt="Bread, olive oil, and a bowl of green olives" data-reveal width="1152" height="1376" loading="lazy" decoding="async">
+        <img src="images/guitar.jpg" alt="An acoustic guitar at golden hour" data-reveal width="1600" height="1067" loading="lazy" decoding="async">
+        <img src="images/real/sea-water.webp" srcset="images/real/sea-water-800.webp 800w, images/real/sea-water.webp 944w" sizes="(max-width: 980px) 100vw, 40vw" alt="Sun sparkling on the open water" data-reveal width="944" height="1200" loading="lazy" decoding="async">
       </div>
 
       <div class="card card--pad">
@@ -127,10 +142,10 @@
       </div>
 
     </div>
-  </div>
+  </main>
 
   <footer class="site-foot">
-    <a href="index.html"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" /></a>
+    <a href="index.html"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" loading="lazy" decoding="async"></a>
   </footer>
 
   <script type="module" src="./src/main.js"></script>

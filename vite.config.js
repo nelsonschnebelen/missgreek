@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import { seoPlugin } from './seo-plugin.js';
 
 export default defineConfig({
-  // relative base so the build works at any path (GitHub Pages subpath included)
+  // relative base so the build works at any path (GitHub Pages subpath or Netlify root)
   base: './',
+  plugins: [seoPlugin()],
   build: {
     rollupOptions: {
       input: {

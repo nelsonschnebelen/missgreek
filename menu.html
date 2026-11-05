@@ -4,7 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menu — Miss Greek · Beach Bar &amp; Grill</title>
-  <meta name="description" content="The Miss Greek menu — priced, and still talking. Plates in the middle. Grab a fork." />
+  <meta name="description" content="The Miss Greek menu: mezé, grills, seafood, wine, cocktails, happy hour, and sweets, with prices." />
+  <link rel="canonical" href="%%SITE%%/menu.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Miss Greek" />
+  <meta property="og:title" content="Menu — Miss Greek · Beach Bar &amp; Grill" />
+  <meta property="og:description" content="The Miss Greek menu: mezé, grills, seafood, wine, cocktails, happy hour, and sweets, with prices." />
+  <meta property="og:url" content="%%SITE%%/menu.html" />
+  <meta property="og:image" content="%%SITE%%/images/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Menu — Miss Greek · Beach Bar &amp; Grill" />
+  <meta name="twitter:description" content="The Miss Greek menu: mezé, grills, seafood, wine, cocktails, happy hour, and sweets, with prices." />
+  <meta name="twitter:image" content="%%SITE%%/images/og.jpg" />
+  <link rel="preload" as="image" href="images/real/octopus.webp" fetchpriority="high" />
   <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="images/logo/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" href="images/logo/favicon-180.png" />
@@ -15,11 +30,11 @@
 </head>
 <body class="page-sub">
 
-  <div class="shell shell--split">
+  <main class="shell shell--split">
 
     <!-- ══════════ LEFT · STICKY CARD ══════════ -->
     <section class="stage stage--side">
-      <div class="stage__media"><img src="images/real/octopus.webp" alt="Octopus drying on a line in the sun by the sea" /></div>
+      <div class="stage__media"><img src="images/real/octopus.webp" srcset="images/real/octopus-800.webp 800w, images/real/octopus.webp 1281w" sizes="(max-width: 980px) 100vw, 58vw" alt="Octopus drying on a line in the sun by the sea" width="1281" height="1600" fetchpriority="high" decoding="async"></div>
       <div class="stage__grade" aria-hidden="true"></div>
       <canvas class="stage__dust" aria-hidden="true"></canvas>
       <header class="bar">
@@ -217,7 +232,7 @@
             </div>
           </article>
           <article class="row" data-reveal>
-            <img class="row__thumb" src="images/food/moussaka.jpg" alt="Moussaka" />
+            <img class="row__thumb" src="images/food/moussaka.jpg" alt="Moussaka" width="800" height="1067" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Moussaka</h3><span class="row__dots"></span><span class="row__price">$24</span></div>
               <p>Eggplant, tomato, béchamel</p>
@@ -227,7 +242,7 @@
           <h2 class="flourish"><span>Signature Platters · For the Table</span></h2>
 
           <article class="row" data-reveal>
-            <img class="row__thumb" src="images/food/grill-veg.jpg" alt="Meat Platter" />
+            <img class="row__thumb" src="images/food/grill-veg.jpg" alt="A mixed grill of skewers, sausage, potatoes, and sauces" width="800" height="1200" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Meat Platter</h3><span class="row__dots"></span><span class="row__price">$165</span></div>
               <p>Chicken kebab, filet mignon kebab, lamb chops, lamb &amp; beef kofte</p>
@@ -267,14 +282,14 @@
             </div>
           </article>
           <article class="row" data-reveal>
-            <img class="row__thumb" src="images/salmon.jpg" alt="Salmon Pan" />
+            <img class="row__thumb" src="images/salmon.jpg" alt="Salmon Pan" width="1600" height="2400" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Salmon Pan</h3><span class="row__dots"></span><span class="row__price">$42</span></div>
               <p>Blackened, spinach, tomato, artichokes, white rice</p>
             </div>
           </article>
           <article class="row" data-reveal>
-            <img class="row__thumb" src="images/food/shrimp.jpg" alt="Garlic Shrimp" />
+            <img class="row__thumb" src="images/food/shrimp.jpg" alt="Garlic Shrimp" width="800" height="534" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Garlic Shrimp</h3><span class="row__dots"></span><span class="row__price">$36</span></div>
               <p>Roasted garlic, olive oil, pita</p>
@@ -291,7 +306,7 @@
           <p class="menu-note" data-reveal>Kebabs served with grilled vegetables, lemon potatoes, pita &amp; tzatziki</p>
 
           <article class="row" data-reveal>
-            <img class="row__thumb" src="images/food/octopus.jpg" alt="Chicken Kebab" />
+            <img class="row__thumb" src="images/food/octopus.jpg" alt="Chicken Kebab" width="800" height="489" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Chicken Kebab</h3><span class="row__dots"></span><span class="row__price">$24</span></div>
             </div>
@@ -365,7 +380,7 @@
             </div>
           </article>
           <article class="row" data-reveal>
-            <img class="row__thumb" src="images/food/gyro.jpg" alt="Chicken Gyro Pita" />
+            <img class="row__thumb" src="images/food/gyro.jpg" alt="Chicken Gyro Pita" width="800" height="530" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Chicken Gyro Pita</h3><span class="row__dots"></span><span class="row__price">$19</span></div>
               <p>Onion, tomato, tzatziki, open face</p>
@@ -429,7 +444,7 @@
             </div>
           </article>
           <article class="row" data-reveal>
-            <img class="row__thumb" src="images/food/pasta-tomato.jpg" alt="Astako Makaronada" />
+            <img class="row__thumb" src="images/food/pasta-tomato.jpg" alt="Shrimp and tomato pasta in a pan" width="800" height="533" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Astako Makaronada</h3><span class="row__dots"></span><span class="row__price">$85</span></div>
               <p>Linguine, shrimp, flash-baked half lobster</p>
@@ -456,7 +471,7 @@
           <h2 class="flourish"><span>Goddess Pours · 16</span></h2>
 
           <article class="row">
-            <img class="row__thumb" src="images/cocktail-pour.jpg" alt="Greek Mojito" />
+            <img class="row__thumb" src="images/cocktail-pour.jpg" alt="Greek Mojito" width="1600" height="970" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Greek Mojito</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
               <p>Skinos Mastiha, cucumber, basil, lime, bubbles</p>
@@ -475,7 +490,7 @@
             </div>
           </article>
           <article class="row">
-            <img class="row__thumb" src="images/negroni.jpg" alt="Zeus Old Fashioned" />
+            <img class="row__thumb" src="images/negroni.jpg" alt="Zeus Old Fashioned" width="1600" height="1069" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Zeus Old Fashioned</h3><span class="row__dots"></span><span class="row__price">$16</span></div>
               <p>Appleton estate rum, Greek Liqueur, Greek herbal bitters</p>
@@ -613,7 +628,7 @@
           <h2 class="flourish"><span>Kiss of Bubbles</span></h2>
 
           <article class="row">
-            <img class="row__thumb" src="images/food/spritz.jpg" alt="Aperol Spritz" />
+            <img class="row__thumb" src="images/food/spritz.jpg" alt="Aperol Spritz" width="800" height="1200" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Aperol Spritz</h3><span class="row__dots"></span><span class="row__price">$13</span></div>
               <p>Aperol, Prosecco, orange</p>
@@ -680,7 +695,7 @@
           <h2 class="flourish"><span>Greek Red Wines · Glass • Bottle</span></h2>
 
           <article class="row">
-            <img class="row__thumb" src="images/vineyard-glasses.jpg" alt="2023 Anthos Agiorgitiko-Cabernet" />
+            <img class="row__thumb" src="images/vineyard-glasses.jpg" alt="2023 Anthos Agiorgitiko-Cabernet" width="1600" height="1067" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>2023 Anthos Agiorgitiko-Cabernet</h3><span class="row__dots"></span><span class="row__price">$13 · $50</span></div>
             </div>
@@ -709,7 +724,7 @@
           <h2 class="flourish"><span>Greek Rosé · Glass • Bottle</span></h2>
 
           <article class="row">
-            <img class="row__thumb" src="images/wine-pour.jpg" alt="2023 Anthos, Moschofilero-Assyrtiko" />
+            <img class="row__thumb" src="images/wine-pour.jpg" alt="2023 Anthos, Moschofilero-Assyrtiko" width="1600" height="2400" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>2023 Anthos, Moschofilero-Assyrtiko</h3><span class="row__dots"></span><span class="row__price">$13 · $50</span></div>
             </div>
@@ -827,7 +842,7 @@
           <h2 class="flourish"><span>Beers</span></h2>
 
           <article class="row">
-            <img class="row__thumb" src="images/food/beer.jpg" alt="Greek beer" />
+            <img class="row__thumb" src="images/food/beer.jpg" alt="Greek beer" width="800" height="533" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Greek</h3><span class="row__dots"></span><span class="row__price">$8</span></div>
               <p>MYTHOS · FIX · ALPHA</p>
@@ -995,7 +1010,7 @@
             </div>
           </article>
           <article class="row">
-            <img class="row__thumb" src="images/food/baklava2.jpg" alt="Pistachio Baklava" />
+            <img class="row__thumb" src="images/food/baklava2.jpg" alt="Pistachio Baklava" width="800" height="533" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Pistachio Baklava</h3><span class="row__dots"></span><span class="row__price">$13</span></div>
               <p>Layered phyllo, Sicilian pistachios, Greek honey syrup</p>
@@ -1074,7 +1089,7 @@
             </div>
           </article>
           <article class="row">
-            <img class="row__thumb" src="images/coffee.jpg" alt="Latte" />
+            <img class="row__thumb" src="images/coffee.jpg" alt="Latte" width="1600" height="1067" loading="lazy" decoding="async">
             <div class="row__body">
               <div class="row__line"><h3>Latte</h3><span class="row__dots"></span><span class="row__price">$4.99</span></div>
             </div>
@@ -1122,10 +1137,10 @@
       </a>
     </div>
 
-  </div>
+  </main>
 
   <footer class="site-foot">
-    <a href="index.html"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" /></a>
+    <a href="index.html"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" loading="lazy" decoding="async"></a>
   </footer>
 
   <script type="module" src="./src/main.js"></script>

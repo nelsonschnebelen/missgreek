@@ -581,6 +581,22 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
   max-width: none;
   object-fit: contain;
 }
+
+.faq { display: grid; gap: 1.15rem; }
+.faq h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--aegean);
+}
+.faq p {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--ink-60);
+  max-width: 42em;
+}
 .sign__script {
   font-family: var(--font-script);
   font-size: 2.3rem;

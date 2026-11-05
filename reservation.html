@@ -4,7 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book a Table — Miss Greek · Beach Bar &amp; Grill</title>
-  <meta name="description" content="Walk in. We'll find you a chair. Or book ahead for sunset." />
+  <meta name="description" content="Book a table at Miss Greek in Miami Beach, or walk in. Reservations are recommended for sunset." />
+  <link rel="canonical" href="%%SITE%%/reservation.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Miss Greek" />
+  <meta property="og:title" content="Book a Table — Miss Greek · Beach Bar &amp; Grill" />
+  <meta property="og:description" content="Book a table at Miss Greek in Miami Beach, or walk in. Reservations are recommended for sunset." />
+  <meta property="og:url" content="%%SITE%%/reservation.html" />
+  <meta property="og:image" content="%%SITE%%/images/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book a Table — Miss Greek · Beach Bar &amp; Grill" />
+  <meta name="twitter:description" content="Book a table at Miss Greek in Miami Beach, or walk in. Reservations are recommended for sunset." />
+  <meta name="twitter:image" content="%%SITE%%/images/og.jpg" />
+  <link rel="preload" as="image" href="images/real/cocktail.webp" fetchpriority="high" />
   <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="images/logo/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" href="images/logo/favicon-180.png" />
@@ -15,11 +30,11 @@
 </head>
 <body class="page-sub">
 
-  <div class="shell shell--split">
+  <main class="shell shell--split">
 
     <!-- ══════════ LEFT · STICKY CARD ══════════ -->
     <section class="stage stage--side">
-      <div class="stage__media"><img src="images/real/cocktail.webp" alt="Two citrus cocktails on the stone beside the water" /></div>
+      <div class="stage__media"><img src="images/real/cocktail.webp" srcset="images/real/cocktail-800.webp 800w, images/real/cocktail.webp 1136w" sizes="(max-width: 980px) 100vw, 58vw" alt="Two citrus cocktails on the stone beside the water" width="1136" height="1408" fetchpriority="high" decoding="async"></div>
       <div class="stage__grade" aria-hidden="true"></div>
       <canvas class="stage__dust" aria-hidden="true"></canvas>
       <header class="bar">
@@ -87,6 +102,30 @@
         </dl>
       </div>
 
+
+      <section class="card card--pad" id="faq">
+        <h2 class="flourish"><span>Questions</span></h2>
+        <!-- TODO: Parking is not mentioned anywhere in the repo. Street address, map coordinates, a real phone number, and the closing time after 10 PM are also unpublished. The (305) 555-0142 line on the order page is a placeholder. Do not invent these. -->
+        <div class="faq">
+          <article>
+            <h3>Do I need a reservation?</h3>
+            <p>Reservations are recommended for sunset. You can also walk in — the door doesn't check names.</p>
+          </article>
+          <article>
+            <h3>What time are you open?</h3>
+            <p>Every day from 8 AM: breakfast 8–11 AM, lunch 12–3 PM, no-hurry hour 3–5 PM, and dinner 6–10 PM. An easy evening runs from 10 until close. The kitchen winds down at 10. A precise closing time is not published. Happy hour on the menu is Monday to Thursday, 4 to 7 PM, and Friday to Sunday, 3 to 6 PM.</p>
+          </article>
+          <article>
+            <h3>Is there a gluten-free option?</h3>
+            <p>Pita and sandwiches are served with fries. The menu offers a gluten-free collard green wrap for +3.</p>
+          </article>
+          <article>
+            <h3>Where are you?</h3>
+            <p>Oceanfront at the hotel, Miami Beach, FL. A street address is not published.</p>
+          </article>
+        </div>
+      </section>
+
       <a class="card card--cta" href="menu.html" data-reveal>
         <span class="card--cta__script">deciding while hungry?</span>
         <span class="card--cta__title">See the Menu</span>
@@ -94,12 +133,52 @@
       </a>
 
     </div>
-  </div>
+  </main>
 
   <footer class="site-foot">
-    <a href="index.html"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" /></a>
+    <a href="index.html"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" loading="lazy" decoding="async"></a>
   </footer>
 
   <script type="module" src="./src/main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need a reservation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reservations are recommended for sunset. You can also walk in — the door doesn't check names."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time are you open?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every day from 8 AM: breakfast 8–11 AM, lunch 12–3 PM, no-hurry hour 3–5 PM, and dinner 6–10 PM. An easy evening runs from 10 until close. The kitchen winds down at 10. A precise closing time is not published. Happy hour on the menu is Monday to Thursday, 4 to 7 PM, and Friday to Sunday, 3 to 6 PM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a gluten-free option?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pita and sandwiches are served with fries. The menu offers a gluten-free collard green wrap for +3."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where are you?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oceanfront at the hotel, Miami Beach, FL. A street address is not published."
+        }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>
