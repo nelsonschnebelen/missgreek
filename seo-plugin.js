@@ -1,14 +1,51 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
 /**
  * Absolute URLs follow the deploy host.
  * SITE_URL wins (set by the GitHub Pages workflow from configure-pages base_url).
  * URL is Netlify's primary site URL.
  * Local builds fall back to this repo's GitHub Pages project URL.
+ *
+ * BASE_PATH is the path prefix for <base href> (GitHub Pages project sites).
+ * Local preview and Netlify root deploys leave it unset so the prefix is /.
  */
 const DEFAULT_ORIGIN = 'https://nelsonschnebelen.github.io/missgreek';
+
+const CLEAN_PAGES = [
+  ['menu.html', 'menu'],
+  ['order.html', 'order'],
+  ['about.html', 'about'],
+  ['reservation.html', 'reservations'],
+];
 
 export function siteOrigin() {
   const raw = process.env.SITE_URL || process.env.URL || DEFAULT_ORIGIN;
   return raw.replace(/\/$/, '');
+}
+
+export function basePath() {
+  const raw = process.env.BASE_PATH;
+  if (raw == null || raw === '' || raw === '/') return '/';
+  const withSlash = raw.startsWith('/') ? raw : `/${raw}`;
+  return withSlash.endsWith('/') ? withSlash : `${withSlash}/`;
+}
+
+function redirectPage(slug, origin) {
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+  <link rel="canonical" href="${origin}/${slug}/" />
+  <meta http-equiv="refresh" content="0; url=${slug}/" />
+  <script>location.replace(${JSON.stringify(`${slug}/`)});</script>
+</head>
+<body>
+  <p><a href="${slug}/">Continue</a></p>
+</body>
+</html>
+`;
 }
 
 function decode(html) {
@@ -84,9 +121,9 @@ export function menuSchema(html, origin) {
 
   return {
     '@type': 'Menu',
-    '@id': `${origin}/menu.html#menu`,
+    '@id': `${origin}/menu/#menu`,
     name: 'Miss Greek menu',
-    url: `${origin}/menu.html`,
+    url: `${origin}/menu/`,
     inLanguage: 'en',
     hasMenuSection: sections.map((section) => {
       const out = { '@type': 'MenuSection', name: section.name };
@@ -98,37 +135,19 @@ export function menuSchema(html, origin) {
 }
 
 function restaurantSchema(origin) {
-  const day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  const span = (opens, closes) => ({
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: day,
-    opens,
-    closes,
-  });
   return {
     '@type': 'Restaurant',
     '@id': `${origin}/#restaurant`,
     name: 'Miss Greek',
     alternateName: 'Miss Greek Beach Bar & Grill',
     url: `${origin}/`,
-    menu: `${origin}/menu.html`,
+    menu: `${origin}/menu/`,
+    hasMenu: `${origin}/menu/`,
+    acceptsReservations: true,
     image: `${origin}/images/og.jpg`,
     servesCuisine: 'Greek',
     priceRange: '$3–$205',
     sameAs: ['https://www.instagram.com/miss.greek/'],
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Miami Beach',
-      addressRegion: 'FL',
-      addressCountry: 'US',
-      description: 'Oceanfront at the hotel. Street address is not published.',
-    },
-    openingHoursSpecification: [
-      span('08:00', '11:00'),
-      span('12:00', '15:00'),
-      span('15:00', '17:00'),
-      span('18:00', '22:00'),
-    ],
   };
 }
 
@@ -139,17 +158,26 @@ function jsonLd(data) {
 function crawlFiles(origin) {
   const pages = [
     ['/', 'Home'],
-    ['/menu.html', 'Menu'],
-    ['/order.html', 'Order online'],
-    ['/about.html', 'About'],
-    ['/reservation.html', 'Book a table'],
+    ['/menu/', 'Menu'],
+    ['/order/', 'Order online'],
+    ['/about/', 'About'],
+    ['/reservations/', 'Book a table'],
   ];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages.map(([path]) => `  <url><loc>${origin}${path}</loc></url>`).join('\n')}
+${pages.map(([pagePath]) => `  <url><loc>${origin}${pagePath}</loc></url>`).join('\n')}
 </urlset>
 `;
   const robots = `User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
 
 Sitemap: ${origin}/sitemap.xml
@@ -177,10 +205,8 @@ ${pages.map(([path, label]) => `- [${label}](${origin}${path})`).join('\n')}
 
 ## Not yet published
 
-- Street address and map coordinates
-- A real telephone (the order page shows (305) 555-0142, marked as a placeholder)
+- Google Business Profile URL. Name, street address, phone, and hours are omitted from JSON-LD until that listing can be checked. Do not copy the site's dayparts or the placeholder (305) 555-0142 into schema.
 - Parking
-- Exact closing time after 10 PM
 - TikTok and Facebook URLs (icons on the home page are not linked)
 `;
   return { sitemap, robots, llms };
@@ -191,20 +217,36 @@ export function seoPlugin() {
   const files = crawlFiles(origin);
   return {
     name: 'miss-greek-seo',
+    configureServer(server) {
+      server.middlewares.use((req, _res, next) => {
+        const [pathname, query] = (req.url || '').split('?');
+        const map = {
+          '/menu': '/menu.html',
+          '/menu/': '/menu.html',
+          '/order': '/order.html',
+          '/order/': '/order.html',
+          '/about': '/about.html',
+          '/about/': '/about.html',
+          '/reservations': '/reservation.html',
+          '/reservations/': '/reservation.html',
+        };
+        if (map[pathname]) req.url = map[pathname] + (query ? `?${query}` : '');
+        next();
+      });
+    },
     transformIndexHtml: {
       order: 'post',
       handler(html, ctx) {
-        let out = html.replaceAll('%%SITE%%', origin);
+        let out = html.replaceAll('%%SITE%%', origin).replaceAll('%%BASE%%', basePath());
         const restaurant = restaurantSchema(origin);
         const graph = [restaurant];
         const file = ctx.filename || ctx.path || '';
-        if (file.endsWith('menu.html')) graph.push(menuSchema(out, origin));
-        const block = `<!-- TODO: street address, geo coordinates, telephone, parking, and the closing time after 10 PM are not in the repo. Do not invent them. The (305) 555-0142 number on the order page is a placeholder. -->\n${jsonLd({ '@context': 'https://schema.org', '@graph': graph })}`;
-        if (!out.includes('application/ld+json')) {
-          out = out.replace('</head>', `${block}\n</head>`);
-        } else {
-          out = out.replace('</head>', `${block}\n</head>`);
+        if (file.endsWith('menu.html')) {
+          restaurant.hasMenu = { '@id': `${origin}/menu/#menu` };
+          graph.push(menuSchema(out, origin));
         }
+        const block = `<!-- TODO: Google Business Profile was not verified, so schema omits name-as-listed, street address, telephone, geo, and openingHoursSpecification. Do not guess them. (305) 555-0142 on the order page is a placeholder. Parking is not documented. -->\n${jsonLd({ '@context': 'https://schema.org', '@graph': graph })}`;
+        out = out.replace('</head>', `${block}\n</head>`);
         return out;
       },
     },
@@ -212,6 +254,17 @@ export function seoPlugin() {
       this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: files.sitemap });
       this.emitFile({ type: 'asset', fileName: 'robots.txt', source: files.robots });
       this.emitFile({ type: 'asset', fileName: 'llms.txt', source: files.llms });
+    },
+    closeBundle() {
+      const dist = path.resolve('dist');
+      for (const [file, slug] of CLEAN_PAGES) {
+        const from = path.join(dist, file);
+        if (!fs.existsSync(from)) continue;
+        const html = fs.readFileSync(from, 'utf8');
+        fs.mkdirSync(path.join(dist, slug), { recursive: true });
+        fs.writeFileSync(path.join(dist, slug, 'index.html'), html);
+        fs.writeFileSync(from, redirectPage(slug, origin));
+      }
     },
   };
 }

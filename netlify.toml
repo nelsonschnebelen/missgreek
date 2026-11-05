@@ -1,0 +1,40 @@
+# Clean paths are the real pages (directory indexes). The .html files in the
+# build are redirects, forced so they are not served as the page itself.
+# Asset URLs stay relative to <base>, so this file does not set a publish path
+# that would fight the GitHub Pages project-site prefix.
+
+[[redirects]]
+  from = "/menu.html"
+  to = "/menu/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/order.html"
+  to = "/order/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reservation.html"
+  to = "/reservations/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reservations.html"
+  to = "/reservations/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true

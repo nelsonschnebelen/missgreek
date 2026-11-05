@@ -46,6 +46,9 @@ body {
 
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
+@supports (text-decoration-inset: 1px) {
+  a { text-decoration-inset: 0.08em; }
+}
 ul, ol { list-style: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 
@@ -268,6 +271,9 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
   border: 1px solid var(--line);
   border-radius: var(--r);
   box-shadow: 0 18px 44px -36px rgba(0, 53, 117, 0.35);
+}
+@supports (corner: 1px round) {
+  .card { corner: var(--r) round; }
 }
 .card--pad { padding: clamp(1.5rem, 3.5vw, 2.8rem); }
 
@@ -869,6 +875,22 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
   .row__line h3 { white-space: normal; }
   .prose-flex { grid-template-columns: 1fr; }
   .prose-flex__art { margin-inline: auto; }
+}
+
+/* Simple reveals. Browsers without scroll timelines just show the content.
+   Stage and rail reveals stay with the GSAP load-in, not a second fade. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    html:not(.is-static) [data-reveal]:not(.stage [data-reveal]):not(.rail [data-reveal]) {
+      animation: mg-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 35%;
+    }
+  }
+}
+@keyframes mg-reveal {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

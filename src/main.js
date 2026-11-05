@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 /* ?static disables all motion — QA captures + safety hatch */
 const staticMode = new URLSearchParams(location.search).has('static');
 const reduceMotion = staticMode || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (staticMode) document.documentElement.classList.add('is-static');
 
 /* ── fold-out menu ─────────────────────────────────────── */
 const fold = document.querySelector('.fold');
@@ -101,14 +102,9 @@ if (!reduceMotion) {
       opacity: 0, x: 26, duration: 0.8, stagger: 0.1, ease: 'power3.out',
     }, '-=0.55');
 
-  gsap.utils.toArray('[data-reveal]').forEach((el) => {
-    if (el.closest('.stage') || el.closest('.rail')) return;
-    gsap.from(el, {
-      opacity: 0, y: 26, duration: 0.8, ease: 'power3.out',
-      scrollTrigger: { trigger: el, start: 'top 92%' },
-    });
-  });
-
+  /* Simple [data-reveal] fades are CSS scroll-driven animations.
+     GSAP stays for the load-in timeline, menu-tab swaps, and the
+     scrubbed hero drift. There is no SplitText, Flip, or pin. */
   const stageImg = document.querySelector('.shell--split .stage__media img');
   if (stageImg) {
     gsap.to(stageImg, {
