@@ -347,23 +347,22 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
   object-fit: cover;
   object-position: center 42%;
 }
-.hero__veil { z-index: -1; background: none; }
+.hero__veil {
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 82% 64% at 12% 92%, rgba(8, 16, 22, 0.9) 0%, rgba(8, 16, 22, 0.72) 24%, rgba(8, 16, 22, 0.32) 46%, rgba(8, 16, 22, 0.08) 62%, transparent 76%);
+}
+@media (max-width: 860px) {
+  .hero__veil {
+    background:
+      radial-gradient(ellipse 150% 58% at 50% 100%, rgba(8, 16, 22, 0.88) 0%, rgba(8, 16, 22, 0.55) 38%, rgba(8, 16, 22, 0.16) 58%, transparent 74%);
+  }
+}
 .hero__copy {
   position: relative;
-  isolation: isolate;
   width: min(var(--wrap), calc(100% - 2rem));
   margin: 0 auto;
   padding: 4.5rem 0 1.4rem;
-}
-.hero__copy::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: -1rem;
-  top: 2.4rem;
-  bottom: 0.2rem;
-  width: min(44rem, calc(100% + 2rem));
-  background: linear-gradient(102deg, rgba(8, 16, 22, 0.92) 0%, rgba(8, 16, 22, 0.86) 62%, rgba(8, 16, 22, 0.45) 84%, transparent 100%);
 }
 .hero .kicker {
   color: #fbf6ec;
@@ -431,7 +430,7 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
   object-fit: cover;
   z-index: -1;
 }
-.path:nth-child(1) img { object-position: center 30%; }
+.path:nth-child(1) img { object-position: center 46%; }
 .path:nth-child(2) img { object-position: center 58%; }
 .path:nth-child(3) img { object-position: center 45%; }
 .path__body {
@@ -544,7 +543,8 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
 .colophon a,
 .order-note a,
 .meta a,
-.faq a {
+.faq a,
+.steps a {
   color: var(--aegean);
   text-decoration: underline;
   text-underline-offset: 0.16em;

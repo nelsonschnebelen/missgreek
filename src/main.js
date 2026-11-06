@@ -134,9 +134,8 @@ if (orderBtn && ORDER_URL) {
   orderBtn.hidden = false;
   orderBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    const mode = document.querySelector('.mode.is-active')?.dataset.mode ?? 'pickup';
     const original = orderBtn.textContent;
-    orderBtn.textContent = mode === 'pickup' ? 'Pickup — coming right up' : 'Delivery — on its way';
+    orderBtn.textContent = 'Opening the order';
     setTimeout(() => { orderBtn.textContent = original; }, 2400);
   });
 }
