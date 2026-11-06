@@ -42,7 +42,11 @@ body {
 
 body.nav-open { overflow: hidden; }
 
-img { display: block; max-width: 100%; }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 address { font-style: normal; }
@@ -142,7 +146,12 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
   line-height: 0;
   padding: 0.35rem 0.2rem;
 }
-.mast__brand img { height: 54px; width: auto; }
+.mast__brand img {
+  height: 54px;
+  width: auto;
+  aspect-ratio: 229 / 321;
+  object-fit: contain;
+}
 
 .mast__links { display: none; }
 .mast__reserve { display: none; }
@@ -565,12 +574,18 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
 /* ── footer ──────────────────────────────────────────────── */
 
 .colophon { padding: 1.35rem 0 1.6rem; }
+.colophon .rule { margin-bottom: 2rem; }
 .colophon__grid {
   display: grid;
   gap: 1.25rem;
   justify-items: start;
 }
-.colophon__logo img { height: 132px; width: auto; }
+.colophon__logo img {
+  height: 132px;
+  width: auto;
+  aspect-ratio: 229 / 321;
+  object-fit: contain;
+}
 .colophon address { margin: 0.35rem 0 0.2rem; line-height: 1.45; }
 .colophon__phone {
   display: inline-flex;
@@ -1060,10 +1075,18 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
 .prose-flex { display: grid; gap: 1.1rem; align-items: center; }
 .prose-flex__art {
   justify-self: center;
-  width: min(220px, 70%);
+  align-self: center;
+  width: min(240px, 100%);
+  height: auto;
   background: var(--cream);
   border: 1px solid var(--navy);
   padding: 0.8rem;
+}
+.prose-flex__art img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1123 / 1226;
+  object-fit: contain;
 }
 .mosaic {
   display: grid;
@@ -1110,7 +1133,14 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
 .rit em { font-style: normal; font-weight: 600; color: var(--navy); }
 
 .card--sign { text-align: center; padding: 1.4rem 1rem 1.5rem; }
-.sign__logo { height: 150px; width: auto; margin-inline: auto; }
+.sign__logo {
+  height: 150px;
+  width: auto;
+  max-width: 100%;
+  aspect-ratio: 229 / 321;
+  object-fit: contain;
+  margin-inline: auto;
+}
 .sign__script {
   font-family: var(--font-script);
   font-size: 2rem;
@@ -1222,6 +1252,7 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
   .page-about .stage-hero { min-height: 72vh; }
 
   .colophon { padding: 1.8rem 0 2rem; }
+  .colophon .rule { margin-bottom: 2.5rem; }
   .colophon__grid {
     grid-template-columns: auto 1.2fr 0.8fr 0.9fr;
     gap: 2rem;
