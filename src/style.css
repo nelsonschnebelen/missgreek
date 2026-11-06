@@ -626,7 +626,7 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
 .page-menu .stage-hero img { object-position: center 32%; }
 .page-about .stage-hero { min-height: 56vh; }
 .page-about .stage-hero img { object-position: center 64%; }
-.page-order .stage-hero img { object-position: center 42%; }
+.page-order .stage-hero img { object-position: center 68%; }
 .page-reserve .stage-hero img { object-position: center 70%; }
 .page-order .reserve-grid__main,
 .page-menu .page-block > .stack {
