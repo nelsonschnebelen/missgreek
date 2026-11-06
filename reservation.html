@@ -4,6 +4,8 @@
   <base href="%%BASE%%" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F3E7D3" />
+  <meta name="color-scheme" content="light" />
   <title>Book a Table — Miss Greek · Beach Bar &amp; Grill</title>
   <meta name="description" content="Book a table at Miss Greek in Miami Beach, or walk in. Reservations are recommended for sunset." />
   <link rel="canonical" href="%%SITE%%/reservations" />
@@ -26,125 +28,170 @@
   <link rel="apple-touch-icon" href="images/logo/favicon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Jost:ital,wght@0,300..700;1,300..700&family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./src/style.css" />
 </head>
-<body class="page-sub">
-
-  <main class="shell shell--split">
-
-    <!-- ══════════ LEFT · STICKY CARD ══════════ -->
-    <section class="stage stage--side">
-      <div class="stage__media"><img src="images/real/cocktail.webp" srcset="images/real/cocktail-800.webp 800w, images/real/cocktail.webp 1136w" sizes="(max-width: 980px) 100vw, 58vw" alt="Two citrus cocktails on the stone beside the water" width="1136" height="1408" fetchpriority="high" decoding="async"></div>
-      <div class="stage__grade" aria-hidden="true"></div>
-      <canvas class="stage__dust" aria-hidden="true"></canvas>
-      <header class="bar">
-        <button class="bar__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-        <a class="bar__brand" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" /></a>
-        <nav class="bar__links" aria-label="Primary">
-          <a href="menu">Menu</a>
-          <a href="order">Order</a>
-          <a href="about">About</a>
-        </nav>
-        <a class="bar__cta" href="reservations">Book a Table</a>
-      </header>
-
-      <nav class="fold" aria-label="Site">
-        <a href="./">Home</a>
+<body class="page-reserve">
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="mast">
+    <div class="mast__row">
+      <button class="mast__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
+      <a class="mast__brand" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" /></a>
+      <nav class="mast__links" aria-label="Primary">
         <a href="menu">Menu</a>
-        <a href="order">Order Online</a>
+        <a href="order">Order</a>
         <a href="about">About</a>
-        <a href="reservations">Book a Table</a>
-        <p class="fold__script">see you at sunset</p>
+        <a href="reservations#find">Location</a>
       </nav>
-      <h1 class="stage__title stage__title--page"><span data-reveal>Book</span></h1>
-      <p class="stage__script" data-reveal>walk in. we'll find you a chair.</p>
-    </section>
-
-    <!-- ══════════ RIGHT · RESERVATION ══════════ -->
-    <div class="flow">
-
-      <div class="card card--pad">
-        <h2 class="flourish"><span>Reservation</span></h2>
-        <p class="form-intro" data-reveal>Reservations recommended for sunset — but the door doesn't check names. The stories don't.</p>
-
-        <form class="form" name="reservation" method="POST" action="/reservations#reserved" data-netlify="true" netlify-honeypot="bot-field" data-reserve>
-          <input type="hidden" name="form-name" value="reservation" />
-          <p hidden>
-            <label>Leave this empty<input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-          </p>
-          <div class="form__grid">
-            <label>Name<input type="text" name="name" required autocomplete="name" placeholder="Who's coming hungry?" /></label>
-            <label>Email<input type="email" name="email" required autocomplete="email" placeholder="you@somewhere.com" /></label>
-            <label>Party
-              <select name="party">
-                <option>2 people</option><option>3 people</option><option selected>4 people</option>
-                <option>5 people</option><option>6 people</option><option>7+ — the big spread</option>
-              </select>
-            </label>
-            <label>Date<input type="date" name="date" required /></label>
-            <label>Time
-              <select name="time">
-                <option>12:00 — the long lunch</option>
-                <option>3:00 — no-hurry hour</option>
-                <option selected>7:30 — the sunset toast</option>
-                <option>9:00 — easy evening</option>
-              </select>
-            </label>
-            <label>Occasion<input type="text" name="note" placeholder="Birthday? Tuesday? Same thing." /></label>
-          </div>
-          <button class="form__submit" type="submit">Hold my table</button>
-          <p class="form__done" id="reserved" tabindex="-1" hidden>Done. Your table's holding its breath. <span>see you at sunset</span></p>
-        </form>
+      <a class="mast__reserve" href="reservations" aria-current="page">Book a Table</a>
+      <span class="mast__balance" aria-hidden="true"></span>
+    </div>
+    <nav class="fold" id="site-menu" aria-label="Site" aria-hidden="true">
+      <a href="./">Home</a>
+      <a href="menu">Menu</a>
+      <a href="order">Order</a>
+      <a href="about">About</a>
+      <a href="reservations" aria-current="page">Reservations</a>
+      <a href="reservations#find">Location</a>
+      <div class="fold__meta">
+        <a href="tel:+13053326933">(305) 332-6933</a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave, Miami Beach</a>
       </div>
+      <p class="fold__script">see you at sunset</p>
+    </nav>
+    <div class="mast__rule" aria-hidden="true"></div>
+  </header>
 
-      <div class="card card--pad">
-        <h2 class="flourish"><span>Find Us</span></h2>
-        <dl class="meta">
-          <div data-reveal><dt>Where</dt><dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave<br />Miami Beach, FL 33139</a></dd></div>
-          <div data-reveal><dt>Call</dt><dd><a href="tel:+13053326933">(305) 332-6933</a></dd></div>
-          <div data-reveal><dt>Say hi</dt><dd>@missgreekmiami<br />Wi-Fi: gohaveadrink</dd></div>
-        </dl>
+  <main id="content">
+    <header class="pagehead">
+      <div class="wrap">
+        <p class="kicker">Miss Greek · Miami Beach</p>
+        <h1>Book a table</h1>
+        <p class="script">walk in. we'll find you a chair.</p>
       </div>
+    </header>
 
+    <div class="wrap reserve-grid page-block">
+      <div class="reserve-grid__main stack">
+        <div class="card card--pad">
+          <h2 class="flourish"><span>Reservation</span></h2>
+          <p class="form-intro">Reservations recommended for sunset — but the door doesn't check names. The stories don't.</p>
 
-      <section class="card card--pad" id="faq">
-        <h2 class="flourish"><span>Questions</span></h2>
-        <div class="faq">
-          <article>
-            <h3>Do I need a reservation?</h3>
-            <p>Reservations are recommended for sunset. You can also walk in — the door doesn't check names.</p>
-          </article>
-          <article>
-            <h3>Is there a gluten-free option?</h3>
-            <p>Pita and sandwiches are served with fries. The menu offers a gluten-free collard green wrap for +3.</p>
-          </article>
-          <article>
-            <h3>Where are you?</h3>
-            <p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave, Miami Beach, FL 33139</a>. Call <a href="tel:+13053326933">(305) 332-6933</a>.</p>
-          </article>
+          <form class="form" name="reservation" method="POST" action="/reservations#reserved" data-netlify="true" netlify-honeypot="bot-field" data-reserve>
+            <input type="hidden" name="form-name" value="reservation" />
+            <p hidden>
+              <label>Leave this empty<input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+            </p>
+            <div class="form__grid">
+              <label>Name<input type="text" name="name" required autocomplete="name" placeholder="Who's coming hungry?" /></label>
+              <label>Email<input type="email" name="email" required autocomplete="email" placeholder="you@somewhere.com" /></label>
+              <label>Party
+                <select name="party">
+                  <option>2 people</option><option>3 people</option><option selected>4 people</option>
+                  <option>5 people</option><option>6 people</option><option>7+ — the big spread</option>
+                </select>
+              </label>
+              <label>Date<input type="date" name="date" required /></label>
+              <label>Time
+                <select name="time">
+                  <option>12:00 — the long lunch</option>
+                  <option>3:00 — no-hurry hour</option>
+                  <option selected>7:30 — the sunset toast</option>
+                  <option>9:00 — easy evening</option>
+                </select>
+              </label>
+              <label>Occasion<input type="text" name="note" placeholder="Birthday? Tuesday? Same thing." /></label>
+            </div>
+            <button class="form__submit" type="submit">Hold my table</button>
+            <p class="form__done" id="reserved" tabindex="-1" hidden>Done. Your table's holding its breath. <span>see you at sunset</span></p>
+          </form>
         </div>
-      </section>
 
-      <a class="card card--cta" href="menu" data-reveal>
-        <span class="card--cta__script">deciding while hungry?</span>
-        <span class="card--cta__title">See the Menu</span>
-        <span class="rail__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
+        <section class="card card--pad" id="faq">
+          <h2 class="flourish"><span>Questions</span></h2>
+          <div class="faq">
+            <article>
+              <h3>Do I need a reservation?</h3>
+              <p>Reservations are recommended for sunset. You can also walk in — the door doesn't check names.</p>
+            </article>
+            <article>
+              <h3>Is there a gluten-free option?</h3>
+              <p>Pita and sandwiches are served with fries. The menu offers a gluten-free collard green wrap for +3.</p>
+            </article>
+            <article>
+              <h3>Where are you?</h3>
+              <p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave, Miami Beach, FL 33139</a>. Call <a href="tel:+13053326933">(305) 332-6933</a>.</p>
+            </article>
+          </div>
+        </section>
 
+        <a class="card card--cta" href="menu">
+          <span class="card--cta__script">deciding while hungry?</span>
+          <span class="card--cta__title">See the Menu</span>
+          <span class="rail__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+
+      <aside class="reserve-grid__side stack">
+        <figure class="frame side-photo">
+          <img src="images/real/cocktail.webp" srcset="images/real/cocktail-800.webp 800w, images/real/cocktail.webp 1136w" sizes="(max-width: 860px) 100vw, 34vw" alt="Two citrus cocktails on the stone beside the water" width="1136" height="1408" fetchpriority="high" decoding="async">
+        </figure>
+        <div class="card card--pad" id="find">
+          <h2 class="flourish"><span>Find Us</span></h2>
+          <dl class="meta">
+            <div><dt>Where</dt><dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave<br />Miami Beach, FL 33139</a></dd></div>
+            <div><dt>Call</dt><dd><a href="tel:+13053326933">(305) 332-6933</a></dd></div>
+            <div><dt>Say hi</dt><dd>@missgreekmiami<br />Wi-Fi: gohaveadrink</dd></div>
+          </dl>
+        </div>
+      </aside>
     </div>
   </main>
 
-  <footer class="site-foot">
-    <div class="site-foot__panel">
-      <a class="site-foot__logo" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" loading="lazy" decoding="async"></a>
-      <address class="site-foot__contact">
-        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave, Miami Beach, FL 33139</a>
-        <span class="site-foot__dot" aria-hidden="true">·</span>
-        <a href="tel:+13053326933">(305) 332-6933</a>
-      </address>
+  <footer class="colophon">
+    <div class="wrap">
+      <div class="rule" aria-hidden="true"></div>
+      <div class="colophon__grid">
+        <a class="colophon__logo" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" loading="lazy" decoding="async"></a>
+        <div>
+          <p class="kicker">Visit</p>
+          <address>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave<br>Miami Beach, FL 33139</a>
+          </address>
+          <a class="colophon__phone" href="tel:+13053326933">(305) 332-6933</a>
+        </div>
+        <nav aria-label="Footer">
+          <p class="kicker">The house</p>
+          <a href="menu">Menu</a>
+          <a href="reservations" aria-current="page">Reservations</a>
+          <a href="order">Order</a>
+          <a href="about">About</a>
+        </nav>
+        <div>
+          <p class="kicker">Say hello</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/miss.greek/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <p class="colophon__sign">Come hungry. Stay late. Yamas.</p>
     </div>
   </footer>
+
+  <nav class="dock" aria-label="Visit">
+    <a href="menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4h12v16H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+      <span>Menu</span>
+    </a>
+    <a href="reservations" aria-current="page">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+      <span>Reserve</span>
+    </a>
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>
+      <span>Location</span>
+    </a>
+  </nav>
 
   <script type="module" src="./src/main.js"></script>
   <script type="application/ld+json">
