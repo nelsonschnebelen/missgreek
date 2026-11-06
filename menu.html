@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="Menu — Miss Greek · Beach Bar &amp; Grill" />
   <meta name="twitter:description" content="The Miss Greek menu: mezé, grills, seafood, wine, cocktails, happy hour, and sweets, with prices." />
   <meta name="twitter:image" content="%%SITE%%/images/og.jpg" />
-  <link rel="preload" as="image" href="images/real/octopus.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/stock/chicken-souvlaki.jpg" fetchpriority="high" />
   <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="images/logo/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" href="images/logo/favicon-180.png" />
@@ -64,7 +64,7 @@
 
   <main id="content">
     <header class="stage-hero">
-      <img src="images/real/octopus.webp" srcset="images/real/octopus-800.webp 800w, images/real/octopus.webp 1281w" sizes="100vw" alt="Octopus drying on a line in the sun by the sea" width="1281" height="1600" fetchpriority="high" decoding="async">
+      <img src="images/stock/chicken-souvlaki.jpg" alt="A finished plate of chicken souvlaki with pita, fries, tomato, and onion" width="1600" height="1198" fetchpriority="high" decoding="async">
       <div class="stage-hero__veil" aria-hidden="true"></div>
       <div class="stage-hero__copy">
         <p class="kicker">Miss Greek · Miami Beach</p>
@@ -78,7 +78,8 @@
     <div class="wrap page-block">
       <div class="stack">
         <div class="card card--pad menu-sheet">
-        <div class="chips" role="tablist" aria-label="Menu sections">
+        <p class="chips-hint" id="menu-tabs-hint">Swipe for every category</p>
+        <div class="chips" role="tablist" aria-label="Menu sections" aria-describedby="menu-tabs-hint">
           <button class="chip is-active" role="tab" aria-selected="true" data-tab="kitchen">From the Kitchen</button>
           <button class="chip" role="tab" aria-selected="false" data-tab="cocktails">Cocktails</button>
           <button class="chip" role="tab" aria-selected="false" data-tab="easy">Spritz &amp; Frozen</button>

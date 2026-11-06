@@ -44,6 +44,47 @@ const chips = document.querySelectorAll('.chip');
 const panels = document.querySelectorAll('.panel');
 let gsapPromise;
 
+const chipList = [...chips];
+const chipHint = document.querySelector('.chips-hint');
+const chipStrip = document.querySelector('.chips');
+
+function revealChip(chip) {
+  if (!chipStrip) return;
+  const pad = 12;
+  const start = chip.offsetLeft - pad;
+  const end = chip.offsetLeft + chip.offsetWidth + pad;
+  const viewStart = chipStrip.scrollLeft;
+  const viewEnd = viewStart + chipStrip.clientWidth;
+  let left = viewStart;
+  if (start < viewStart) left = Math.max(0, start);
+  else if (end > viewEnd) left = end - chipStrip.clientWidth;
+  if (left !== viewStart) {
+    chipStrip.scrollTo({ left, behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+}
+
+function syncChipHint() {
+  if (!chipHint || !chipStrip) return;
+  chipHint.hidden = chipStrip.scrollWidth <= chipStrip.clientWidth + 8;
+}
+syncChipHint();
+window.addEventListener('resize', syncChipHint);
+
+chipList.forEach((chip, index) => {
+  chip.addEventListener('focus', () => revealChip(chip));
+  chip.addEventListener('keydown', (e) => {
+    const key = e.key;
+    let next = null;
+    if (key === 'ArrowRight') next = chipList[index + 1];
+    else if (key === 'ArrowLeft') next = chipList[index - 1];
+    else if (key === 'Home') next = chipList[0];
+    else if (key === 'End') next = chipList[chipList.length - 1];
+    if (!next || next === chip) return;
+    e.preventDefault();
+    next.focus();
+  });
+});
+
 chips.forEach((chip) => {
   chip.addEventListener('click', async () => {
     if (chip.classList.contains('is-active')) return;
