@@ -385,7 +385,7 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
   max-width: 14em;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.05rem, 7.4vw, 4.4rem);
+  font-size: clamp(1.48rem, 5.5vw, 2.7rem);
   line-height: 0.96;
   letter-spacing: 0.01em;
   text-transform: uppercase;
