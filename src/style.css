@@ -1,32 +1,39 @@
 /* ═══════════════════════════════════════════════════════════
    MISS GREEK · BEACH BAR & GRILL
-   Qitchen anatomy · brand-book skin.
-   "Cycladic white, Aegean blue, sunset rose."
+   Live layout. Brand tokens from the style guide.
    Native two-colour: Deep Aegean + Ouzo Glow on white.
-   Display: Yeseva One (Londona stand-in, UPPERCASE)
-   Body: Jost (Neutra stand-in) · Script: Caveat (per the book)
+   Display: Yeseva One — Londona stand-in (uppercase titles). OFL.
+   Body: Jost — Neutra stand-in, Light 300 / Book 400 / Demi 500–600 / Bold 700. OFL.
+   Script: Caveat — lettermagic stand-in (lowercase accents). OFL.
+   Licensed faces are not embedded.
    ═══════════════════════════════════════════════════════════ */
 
 :root {
-  /* primary */
-  --aegean: #004FC1;
-  --ouzo: #BD646D;
-  /* secondary */
-  --midnight: #003575;
-  --dawn: #00A5F2;
-  --mist: #B3DFFF;
-  --bougainvillea: #E8B7B3;
-  --sand: #EDE6DA;
-  --paper: #FDFCF8;
+  /* Primary — style guide hexes */
+  --aegean: #004FC1;          /* Deep Aegean */
+  --ouzo: #BD646D;            /* Ouzo Glow */
+  --bougainvillea: #E8B7B3;   /* Bougainvillea Blush */
+  /* Secondary */
+  --midnight: #003575;        /* Erato's Midnight */
+  --sand: #EDE6DA;            /* Seashell Sand */
+  --mist: #B3DFFF;            /* Santorini Mist */
+  --dawn: #00A5F2;            /* Miami Dawn */
+  --paper: #FDFCF8;           /* Cycladic white (logo ground) */
 
   --ink: var(--midnight);
-  --ink-60: rgba(0, 53, 117, 0.68);
-  --ink-40: rgba(0, 53, 117, 0.45);
+  /* Midnight mixes darkened just enough for WCAG AA body text
+     on paper, sand, and the sand-tinted row hover. */
+  --ink-60: rgba(0, 53, 117, 0.78);
+  --ink-40: rgba(0, 53, 117, 0.68);
   --line: rgba(0, 53, 117, 0.14);
 
   --font-display: "Yeseva One", Georgia, serif;
   --font-body: "Jost", sans-serif;
   --font-script: "Caveat", cursive;
+  --weight-light: 300;
+  --weight-book: 400;
+  --weight-demi: 500;
+  --weight-bold: 700;
 
   --gap: 10px;
   --r: 16px;
@@ -37,7 +44,7 @@
 
 body {
   font-family: var(--font-body);
-  font-weight: 400;
+  font-weight: var(--weight-book);
   background: var(--sand);
   color: var(--ink);
   line-height: 1.6;
@@ -185,7 +192,7 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
 .bar__links { display: flex; gap: 1rem; }
 .bar__links a {
   font-size: 0.67rem;
-  font-weight: 500;
+  font-weight: var(--weight-demi);
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink-60);
@@ -195,7 +202,7 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
 .bar__links a:hover, .bar__links a[aria-current="page"] { color: var(--aegean); }
 .bar__cta {
   font-size: 0.67rem;
-  font-weight: 500;
+  font-weight: var(--weight-demi);
   letter-spacing: 0.24em;
   text-transform: uppercase;
   padding: 0.85em 1.35em;
@@ -244,7 +251,7 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
   z-index: 1;
   color: var(--paper);
   font-size: 0.78rem;
-  font-weight: 500;
+  font-weight: var(--weight-demi);
   letter-spacing: 0.34em;
   text-transform: uppercase;
 }
@@ -290,7 +297,7 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
 }
 .chip {
   font-size: 0.66rem;
-  font-weight: 500;
+  font-weight: var(--weight-demi);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ink-60);
@@ -318,13 +325,17 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
   margin: 2.6rem 0 1.8rem;
 }
 .panel .flourish:first-child, .card--pad > .flourish:first-child { margin-top: 0; }
+/* Wave rule from the style guide's Aegean stripes. Same slot as the old hairline. */
 .flourish::before, .flourish::after {
   content: "";
-  height: 1px;
+  height: 8px;
   width: clamp(2rem, 6vw, 5rem);
-  background: linear-gradient(90deg, transparent, rgba(0, 53, 117, 0.4));
+  flex: 0 0 auto;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='8' viewBox='0 0 48 8'><path d='M0 5c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4 4 4 8 4' fill='none' stroke='%23003575' stroke-opacity='0.55' stroke-width='1.15' stroke-linecap='round'/></svg>");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 48px 8px;
 }
-.flourish::after { background: linear-gradient(270deg, transparent, rgba(0, 53, 117, 0.4)); }
 
 /* panels */
 .panel[hidden] { display: none; }
@@ -387,6 +398,7 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
 .flourish span { max-width: 22em; text-wrap: balance; }
 .menu-note {
   text-align: center;
+  font-weight: var(--weight-light);
   font-size: 0.88rem;
   color: var(--ink-60);
   margin: -0.85rem auto 1.45rem;
@@ -395,6 +407,7 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
 }
 .menu-note--fine {
   margin: 2.2rem auto 0.2rem;
+  font-weight: var(--weight-book);
   font-size: 0.78rem;
   color: var(--ink-40);
   max-width: 46em;
@@ -499,39 +512,6 @@ body.nav-open .bar__burger span:nth-child(3) { transform: translateY(-5.5px) rot
   border: 1px solid rgba(0, 53, 117, 0.18);
 }
 .mosaic img:nth-child(even) { border-radius: 90px 90px var(--r) var(--r); }
-
-.ritlist { display: grid; }
-.rit {
-  display: flex;
-  gap: 1.4rem;
-  padding: 1.3rem 0;
-}
-.rit + .rit { border-top: 1px solid rgba(0, 53, 117, 0.09); }
-.rit__num {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  color: var(--ouzo);
-  padding-top: 0.25rem;
-  min-width: 1.6rem;
-}
-.rit h3 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 1.15rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--aegean);
-}
-.rit__when {
-  font-size: 0.64rem;
-  font-weight: 500;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--ink-40);
-  margin: 0.25rem 0 0.45rem;
-}
-.rit p:not(.rit__when) { font-size: 0.9rem; color: var(--ink-60); max-width: 40em; }
-.rit em { color: var(--aegean); font-style: normal; font-weight: 500; }
 
 .hours { display: grid; }
 .hours li {
@@ -653,7 +633,7 @@ a[href^="tel:"] { white-space: nowrap; }
 .sign__line {
   margin-top: 0.5rem;
   font-size: 0.68rem;
-  font-weight: 500;
+  font-weight: var(--weight-demi);
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--ink-60);
@@ -672,7 +652,7 @@ a[href^="tel:"] { white-space: nowrap; }
   display: grid;
   gap: 0.45rem;
   font-size: 0.64rem;
-  font-weight: 500;
+  font-weight: var(--weight-demi);
   letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--ink-40);
@@ -701,7 +681,7 @@ a[href^="tel:"] { white-space: nowrap; }
   background: var(--aegean);
   color: var(--paper);
   font-size: 0.74rem;
-  font-weight: 500;
+  font-weight: var(--weight-demi);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   transition: background 0.3s, transform 0.3s;
@@ -729,7 +709,7 @@ a[href^="tel:"] { white-space: nowrap; }
 }
 .meta dt {
   font-size: 0.62rem;
-  font-weight: 500;
+  font-weight: var(--weight-demi);
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--ouzo);
@@ -783,7 +763,7 @@ a[href^="tel:"] { white-space: nowrap; }
   background: var(--aegean);
   color: var(--paper);
   font-size: 0.76rem;
-  font-weight: 500;
+  font-weight: var(--weight-demi);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   transition: background 0.3s, transform 0.3s;
@@ -800,7 +780,7 @@ a[href^="tel:"] { white-space: nowrap; }
   line-height: 1.5;
   color: var(--ink-60);
 }
-.order-note a[href^="tel:"] { font-weight: 500; }
+.order-note a[href^="tel:"] { font-weight: var(--weight-demi); }
 
 .steps { display: grid; }
 .steps li {
