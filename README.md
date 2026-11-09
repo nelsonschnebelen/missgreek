@@ -6,9 +6,8 @@ Marketing site for Miss Greek — a Greek beach bar & grill in Miami.
 ## Stack
 
 - **Vite** (multi-page, no framework)
-- **GSAP + ScrollTrigger** for entrance and scroll reveals
-- Vanilla canvas for the hero "sun dust" particles
-- Native scrolling — no smooth-scroll library
+- **GSAP** only for menu-tab motion, loaded when a tab is opened
+- Native scrolling. Content stays visible with motion off (`?static` or reduced motion)
 
 ## Pages
 
@@ -22,25 +21,24 @@ Marketing site for Miss Greek — a Greek beach bar & grill in Miami.
 
 ## Brand
 
-Taken from the client's brand book and voice guidelines.
+The mark in `public/images/logo/` still carries the brand-book blue and rose.
+The page around it is a separate harbor palette: cream paper, navy, clay.
 
 | Token | Hex | Role |
 |---|---|---|
-| Deep Aegean | `#004FC1` | Primary — headings, CTAs |
-| Ouzo Glow | `#BD646D` | Accent — prices, script notes |
-| Erato's Midnight | `#003575` | Body text |
-| Miami Dawn | `#00A5F2` | Focus states |
-| Santorini Mist | `#B3DFFF` | Light accent |
-| Bougainvillea | `#E8B7B3` | Script on dark |
-| Seashell Sand | `#EDE6DA` | Page canvas |
+| Cream | `#F3E7D3` | Page canvas |
+| Paper | `#FBF6EC` | Cards and the menu sheet |
+| Harbor navy | `#17384A` | Headings, buttons, dock |
+| Aegean | `#1E5870` | Links |
+| Clay | `#8E4328` | Prices, script, kickers |
 
 **Type.** The brand book specifies Londona (display), Neutra (body) and
-lettermagic (script). Those are commercial faces and are not licensed here,
-so the site currently ships with free stand-ins:
+lettermagic (script). Those are commercial faces and are not licensed here.
+The preview uses free stand-ins chosen for a warm printed-menu feeling:
 
-- **Yeseva One** → Londona (display, uppercase)
-- **Jost** → Neutra (body)
-- **Caveat** → lettermagic (her handwriting)
+- **Bodoni Moda** (OFL) for display titles, standing in for Londona
+- **Jost** (OFL) for body text, standing in for Neutra
+- **Caveat** (OFL) for the short handwritten lines, standing in for lettermagic
 
 To swap in the real faces: drop the font files in `public/fonts/`, add
 `@font-face` rules at the top of `src/style.css`, and update the three

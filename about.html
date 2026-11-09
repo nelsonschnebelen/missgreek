@@ -4,13 +4,15 @@
   <base href="%%BASE%%" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#EDE6DA" />
+  <meta name="color-scheme" content="light" />
   <title>About — Miss Greek · Beach Bar &amp; Grill</title>
-  <meta name="description" content="Miss Greek is a mood, not a mascot. Part Aegean, part Miami." />
+  <meta name="description" content="Miss Greek is a mood, not a mascot. Part Aegean, part Miami. Your Greek summer, all year." />
   <link rel="canonical" href="%%SITE%%/about" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Miss Greek" />
   <meta property="og:title" content="About — Miss Greek · Beach Bar &amp; Grill" />
-  <meta property="og:description" content="Miss Greek is a mood, not a mascot. Part Aegean, part Miami." />
+  <meta property="og:description" content="Miss Greek is a mood, not a mascot. Part Aegean, part Miami. Your Greek summer, all year." />
   <meta property="og:url" content="%%SITE%%/about" />
   <meta property="og:image" content="%%SITE%%/images/og.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -18,7 +20,7 @@
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About — Miss Greek · Beach Bar &amp; Grill" />
-  <meta name="twitter:description" content="Miss Greek is a mood, not a mascot. Part Aegean, part Miami." />
+  <meta name="twitter:description" content="Miss Greek is a mood, not a mascot. Part Aegean, part Miami. Your Greek summer, all year." />
   <meta name="twitter:image" content="%%SITE%%/images/og.jpg" />
   <link rel="preload" as="image" href="images/real/friends-table.webp" fetchpriority="high" />
   <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml" />
@@ -26,86 +28,129 @@
   <link rel="apple-touch-icon" href="images/logo/favicon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Jost:ital,wght@0,300..700;1,300..700&family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Caveat:wght@500&family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./src/style.css" />
 </head>
-<body class="page-sub">
-
-  <main class="shell shell--split">
-
-    <!-- ══════════ LEFT · STICKY CARD ══════════ -->
-    <section class="stage stage--side">
-      <div class="stage__media"><img src="images/real/friends-table.webp" srcset="images/real/friends-table-800.webp 800w, images/real/friends-table.webp 1136w" sizes="(max-width: 980px) 100vw, 58vw" alt="Friends sharing a meal at a wooden table by the sea" width="1136" height="1408" fetchpriority="high" decoding="async"></div>
-      <div class="stage__grade" aria-hidden="true"></div>
-      <canvas class="stage__dust" aria-hidden="true"></canvas>
-      <header class="bar">
-        <button class="bar__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-        <a class="bar__brand" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" /></a>
-        <nav class="bar__links" aria-label="Primary">
-          <a href="menu">Menu</a>
-          <a href="order">Order</a>
-          <a href="about" aria-current="page">About</a>
-        </nav>
-        <a class="bar__cta" href="reservations">Book a Table</a>
-      </header>
-
-      <nav class="fold" aria-label="Site">
-        <a href="./">Home</a>
+<body class="page-about">
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="mast">
+    <div class="mast__row">
+      <button class="mast__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
+      <a class="mast__brand" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" /></a>
+      <nav class="mast__links" aria-label="Primary">
         <a href="menu">Menu</a>
-        <a href="order">Order Online</a>
-        <a href="about">About</a>
-        <a href="reservations">Book a Table</a>
-        <p class="fold__script">see you at sunset</p>
+        <a href="order">Order</a>
+        <a href="about" aria-current="page">About</a>
+        <a href="reservations#find">Location</a>
       </nav>
-      <h1 class="stage__title stage__title--page"><span data-reveal>About</span></h1>
-      <p class="stage__script" data-reveal>a mood, not a mascot.</p>
-    </section>
+      <a class="mast__reserve" href="reservations">Book a Table</a>
+      <span class="mast__balance" aria-hidden="true"></span>
+    </div>
+    <nav class="fold" id="site-menu" aria-label="Site" aria-hidden="true">
+      <a href="./">Home</a>
+      <a href="menu">Menu</a>
+      <a href="order">Order</a>
+      <a href="about" aria-current="page">About</a>
+      <a href="reservations">Reservations</a>
+      <a href="reservations#find">Location</a>
+      <div class="fold__meta">
+        <a href="tel:+13053326933">(305) 332-6933</a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave, Miami Beach</a>
+      </div>
+      <p class="fold__script">see you at sunset</p>
+    </nav>
+    <div class="mast__rule" aria-hidden="true"></div>
+  </header>
 
-    <!-- ══════════ RIGHT · STORY ══════════ -->
-    <div class="flow">
+  <main id="content">
+    <header class="stage-hero">
+      <img src="images/real/friends-table.webp" srcset="images/real/friends-table-800.webp 800w, images/real/friends-table.webp 1136w" sizes="100vw" alt="Friends sharing a long meal by the water — Greek summer mood, not our dining room" width="1136" height="1408" fetchpriority="high" decoding="async">
+      <div class="stage-hero__veil" aria-hidden="true"></div>
+      <div class="stage-hero__copy">
+        <p class="kicker">Miss Greek · Miami Beach</p>
+        <h1>About</h1>
+        <p class="script">a mood, not a mascot.</p>
+      </div>
+    </header>
 
+    <div class="seam" aria-hidden="true"><div class="rule"></div></div>
+
+    <div class="wrap stack page-block">
       <div class="card card--pad">
         <h2 class="flourish"><span>The One Idea</span></h2>
         <div class="prose-flex">
-          <div class="prose" data-reveal>
+          <div class="prose">
             <h3 class="prose__display">Permanent summer.</h3>
             <p>Greece gets a Greek summer for three months. Miami gets one all year. Miss Greek is where those two summers meet and decide never to end.</p>
             <p>She isn't a woman. She's a mood that shows up around six — salt drying on your shoulders, the second drink sweating on the table, nobody checking the time, nobody headed home. The cousin from the islands who feeds you before she asks your name. The one who turns lunch into dinner and strangers into a table.</p>
             <p>Part Aegean, part Miami, all heart, no hurry.</p>
             <p class="prose__script">she doesn't do fine dining. she does long dining.</p>
           </div>
-          <div class="prose-flex__art" data-reveal>
+          <div class="prose-flex__art">
             <img src="images/dancers.png" alt="Three dancers in cobalt and coral — the Miss Greek illustration" width="1123" height="1226" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
 
       <div class="mosaic">
-        <img src="images/real/cocktail.webp" srcset="images/real/cocktail-800.webp 800w, images/real/cocktail.webp 1136w" sizes="(max-width: 980px) 50vw, 24vw" alt="Two citrus cocktails and a dish of olives beside clear water" data-reveal width="1136" height="1408" loading="lazy" decoding="async">
-        <img src="images/real/olives-bread.webp" srcset="images/real/olives-bread-800.webp 800w, images/real/olives-bread.webp 1152w" sizes="(max-width: 980px) 50vw, 24vw" alt="Bread, olive oil, and a bowl of green olives" data-reveal width="1152" height="1376" loading="lazy" decoding="async">
-        <img src="images/guitar.jpg" alt="An acoustic guitar at golden hour" data-reveal width="1600" height="1067" loading="lazy" decoding="async">
-        <img src="images/real/sea-water.webp" srcset="images/real/sea-water-800.webp 800w, images/real/sea-water.webp 944w" sizes="(max-width: 980px) 100vw, 40vw" alt="Sun sparkling on the open water" data-reveal width="944" height="1200" loading="lazy" decoding="async">
+        <img src="images/real/cocktail.webp" srcset="images/real/cocktail-800.webp 800w, images/real/cocktail.webp 1136w" sizes="(max-width: 860px) 50vw, 24vw" alt="Citrus cocktails and olives by clear water — Aegean mood, not the Collins Avenue bar" width="1136" height="1408" loading="lazy" decoding="async">
+        <img src="images/real/olives-bread.webp" srcset="images/real/olives-bread-800.webp 800w, images/real/olives-bread.webp 1152w" sizes="(max-width: 860px) 50vw, 24vw" alt="Bread, olive oil, and green olives — Greek summer table mood" width="1152" height="1376" loading="lazy" decoding="async">
+        <img src="images/guitar.jpg" alt="An acoustic guitar at golden hour — brand mood" width="1600" height="1067" loading="lazy" decoding="async">
+        <img src="images/real/sea-water.webp" srcset="images/real/sea-water-800.webp 800w, images/real/sea-water.webp 944w" sizes="(max-width: 860px) 50vw, 24vw" alt="Sun on open water — brand mood, not the Collins Avenue shore" width="944" height="1200" loading="lazy" decoding="async">
       </div>
 
-      <div class="card card--pad card--sign" data-reveal>
+      <div class="card card--sign">
         <img class="sign__logo" src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" />
         <p class="sign__script">see you at sunset</p>
         <p class="sign__line">Come hungry. Stay late. Yamas.</p>
       </div>
-
     </div>
   </main>
 
-  <footer class="site-foot">
-    <div class="site-foot__panel">
-      <a class="site-foot__logo" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" loading="lazy" decoding="async"></a>
-      <address class="site-foot__contact">
-        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave, Miami Beach, FL 33139</a>
-        <span class="site-foot__dot" aria-hidden="true">·</span>
-        <a href="tel:+13053326933">(305) 332-6933</a>
-      </address>
+  <footer class="colophon">
+    <div class="wrap">
+      <div class="rule" aria-hidden="true"></div>
+      <div class="colophon__grid">
+        <a class="colophon__logo" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" loading="lazy" decoding="async"></a>
+        <div>
+          <p class="kicker">Visit</p>
+          <address>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave<br>Miami Beach, FL 33139</a>
+          </address>
+          <a class="colophon__phone" href="tel:+13053326933">(305) 332-6933</a>
+        </div>
+        <nav aria-label="Footer">
+          <p class="kicker">The house</p>
+          <a href="menu">Menu</a>
+          <a href="reservations">Reservations</a>
+          <a href="order">Order</a>
+          <a href="about" aria-current="page">About</a>
+        </nav>
+        <div>
+          <p class="kicker">Say hello</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/miss.greek/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <p class="colophon__sign">Come hungry. Stay late. Yamas.</p>
     </div>
   </footer>
+
+  <nav class="dock" aria-label="Visit">
+    <a href="menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4h12v16H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+      <span>Menu</span>
+    </a>
+    <a href="reservations">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+      <span>Reserve</span>
+    </a>
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>
+      <span>Location</span>
+    </a>
+  </nav>
 
   <script type="module" src="./src/main.js"></script>
 </body>

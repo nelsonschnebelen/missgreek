@@ -4,13 +4,15 @@
   <base href="%%BASE%%" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#EDE6DA" />
+  <meta name="color-scheme" content="light" />
   <title>Order Online — Miss Greek · Beach Bar &amp; Grill</title>
-  <meta name="description" content="Order Greek plates for pickup or delivery from Miss Greek in Miami Beach." />
+  <meta name="description" content="Call Miss Greek in Miami Beach to ask about an order. There is no online order link yet." />
   <link rel="canonical" href="%%SITE%%/order" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Miss Greek" />
   <meta property="og:title" content="Order Online — Miss Greek · Beach Bar &amp; Grill" />
-  <meta property="og:description" content="Order Greek plates for pickup or delivery from Miss Greek in Miami Beach." />
+  <meta property="og:description" content="Call Miss Greek in Miami Beach to ask about an order. There is no online order link yet." />
   <meta property="og:url" content="%%SITE%%/order" />
   <meta property="og:image" content="%%SITE%%/images/og.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -18,151 +20,184 @@
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Order Online — Miss Greek · Beach Bar &amp; Grill" />
-  <meta name="twitter:description" content="Order Greek plates for pickup or delivery from Miss Greek in Miami Beach." />
+  <meta name="twitter:description" content="Call Miss Greek in Miami Beach to ask about an order. There is no online order link yet." />
   <meta name="twitter:image" content="%%SITE%%/images/og.jpg" />
-  <link rel="preload" as="image" href="images/food/grill-veg.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/stock/order-souvlaki.jpg" fetchpriority="high" />
   <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="images/logo/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" href="images/logo/favicon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Jost:ital,wght@0,300..700;1,300..700&family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Caveat:wght@500&family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./src/style.css" />
 </head>
-<body class="page-sub">
-
-  <main class="shell shell--split">
-
-    <!-- ══════════ LEFT · STICKY CARD ══════════ -->
-    <section class="stage stage--side">
-      <div class="stage__media"><img src="images/food/grill-veg.jpg" alt="A mixed grill of skewers, sausage, potatoes, and sauces" width="800" height="1200" fetchpriority="high" decoding="async"></div>
-      <div class="stage__grade" aria-hidden="true"></div>
-      <canvas class="stage__dust" aria-hidden="true"></canvas>
-      <header class="bar">
-        <button class="bar__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-        <a class="bar__brand" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" /></a>
-        <nav class="bar__links" aria-label="Primary">
-          <a href="menu">Menu</a>
-          <a href="order" aria-current="page">Order</a>
-          <a href="about">About</a>
-        </nav>
-        <a class="bar__cta" href="reservations">Book a Table</a>
-      </header>
-
-      <nav class="fold" aria-label="Site">
-        <a href="./">Home</a>
+<body class="page-order">
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="mast">
+    <div class="mast__row">
+      <button class="mast__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
+      <a class="mast__brand" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" /></a>
+      <nav class="mast__links" aria-label="Primary">
         <a href="menu">Menu</a>
-        <a href="order">Order Online</a>
+        <a href="order" aria-current="page">Order</a>
         <a href="about">About</a>
-        <a href="reservations">Book a Table</a>
-        <p class="fold__script">see you at sunset</p>
+        <a href="reservations#find">Location</a>
       </nav>
+      <a class="mast__reserve" href="reservations">Book a Table</a>
+      <span class="mast__balance" aria-hidden="true"></span>
+    </div>
+    <nav class="fold" id="site-menu" aria-label="Site" aria-hidden="true">
+      <a href="./">Home</a>
+      <a href="menu">Menu</a>
+      <a href="order" aria-current="page">Order</a>
+      <a href="about">About</a>
+      <a href="reservations">Reservations</a>
+      <a href="reservations#find">Location</a>
+      <div class="fold__meta">
+        <a href="tel:+13053326933">(305) 332-6933</a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave, Miami Beach</a>
+      </div>
+      <p class="fold__script">see you at sunset</p>
+    </nav>
+    <div class="mast__rule" aria-hidden="true"></div>
+  </header>
 
-      <h1 class="stage__title stage__title--page"><span data-reveal>Order</span></h1>
-      <p class="stage__script" data-reveal>your greek summer, to go.</p>
-    </section>
+  <main id="content">
+    <header class="stage-hero">
+      <img src="images/stock/order-souvlaki.jpg" alt="Souvlaki skewers on a small grill — licensed food photo, not our kitchen" width="1600" height="2134" fetchpriority="high" decoding="async">
+      <div class="stage-hero__veil" aria-hidden="true"></div>
+      <div class="stage-hero__copy">
+        <p class="kicker">Miss Greek · Miami Beach</p>
+        <h1>Order</h1>
+        <p class="script">your greek summer, to go.</p>
+      </div>
+    </header>
 
-    <!-- ══════════ RIGHT · ORDERING ══════════ -->
-    <div class="flow">
+    <div class="seam" aria-hidden="true"><div class="rule"></div></div>
 
-      <div class="card card--pad">
-        <h2 class="flourish"><span>Pickup or Delivery</span></h2>
-        <p class="form-intro" data-reveal>Can't make it to the water? We'll box it up — kraft box, cobalt wax seal, the works. Plates in the middle, even at your place.</p>
+    <div class="wrap page-block">
+      <div class="reserve-grid__main stack">
+        <div class="card card--pad">
+          <h2 class="flourish"><span>Order by phone</span></h2>
+          <p class="form-intro">There is no online order link yet. Call and ask for what you want from the menu.</p>
 
-        <div class="modes" role="tablist" aria-label="Order type">
-          <button class="mode is-active" role="tab" aria-selected="true" data-mode="pickup">
-            <span class="mode__name">Pickup</span>
-            <span class="mode__meta">Ready in ~20 min · at the host stand</span>
-          </button>
-          <button class="mode" role="tab" aria-selected="false" data-mode="delivery">
-            <span class="mode__name">Delivery</span>
-            <span class="mode__meta">30–45 min · 5-mile radius</span>
-          </button>
+          <a class="order-btn" data-order hidden>Start your order</a>
+          <p class="order-note">
+            Call <a href="tel:+13053326933">(305) 332-6933</a>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave, Miami Beach, FL 33139</a>
+          </p>
         </div>
 
-        <a class="order-btn" data-order hidden>Start your order</a>
-        <p class="order-note">
-          Call <a href="tel:+13053326933">(305) 332-6933</a>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave, Miami Beach, FL 33139</a>
-        </p>
+        <div class="card card--pad">
+          <h2 class="flourish"><span>From the menu</span></h2>
+          <p class="form-intro">A few plates, with the prices published on the menu.</p>
+
+          <article class="row">
+            <img class="row__thumb" src="images/stock/gyro-pita.jpg" alt="Meat, onion, tomato, and yogurt sauce on pita" width="1600" height="1064" loading="lazy" decoding="async">
+            <div class="row__body">
+              <div class="row__line"><h3>Chicken Gyro Pita</h3><span class="row__dots"></span><span class="row__price">$19</span></div>
+              <p>Onion, tomato, tzatziki, open face</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/stock/chicken-souvlaki.jpg" alt="Chicken souvlaki with fries, tomato, and onion" width="1600" height="1198" loading="lazy" decoding="async">
+            <div class="row__body">
+              <div class="row__line"><h3>Chicken Kebab</h3><span class="row__dots"></span><span class="row__price">$24</span></div>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/stock/moussaka.jpg" alt="Baked moussaka in a glass dish" width="1600" height="1200" loading="lazy" decoding="async">
+            <div class="row__body">
+              <div class="row__line"><h3>Moussaka</h3><span class="row__dots"></span><span class="row__price">$24</span></div>
+              <p>Eggplant, tomato, béchamel</p>
+            </div>
+          </article>
+          <article class="row">
+            <div class="row__body">
+              <div class="row__line"><h3>Greek Village Salad <em>horiatiki</em></h3><span class="row__dots"></span><span class="row__price">$18</span></div>
+              <p>Tomato, cucumber, feta, kalamata, red onion, green pepper</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/stock/garlic-shrimp.jpg" alt="Garlic shrimp in a clay bowl with bread" width="1600" height="1200" loading="lazy" decoding="async">
+            <div class="row__body">
+              <div class="row__line"><h3>Garlic Shrimp</h3><span class="row__dots"></span><span class="row__price">$36</span></div>
+              <p>Roasted garlic, olive oil, pita</p>
+            </div>
+          </article>
+          <article class="row">
+            <img class="row__thumb" src="images/stock/baklava.jpg" alt="Slices of baklava on a plate" width="1542" height="1024" loading="lazy" decoding="async">
+            <div class="row__body">
+              <div class="row__line"><h3>Pistachio Baklava</h3><span class="row__dots"></span><span class="row__price">$13</span></div>
+              <p>Layered phyllo, Sicilian pistachios, Greek honey syrup</p>
+            </div>
+          </article>
+
+          <p class="secret"><span>family style, family size</span> Feeding a crowd? The Meat Platter, Seafood Platter, and Miss Greek Platter are made for the table.</p>
+        </div>
+
+        <div class="card card--pad">
+          <h2 class="flourish"><span>How It Works</span></h2>
+          <ol class="steps">
+            <li><span class="steps__n">01</span><div><h3>Build your table</h3><p>Pick your plates. We'd start with the spreads and work outward.</p></div></li>
+            <li><span class="steps__n">02</span><div><h3>Call</h3><p><a href="tel:+13053326933">(305) 332-6933</a>. 1401 Collins Ave, Miami Beach.</p></div></li>
+            <li><span class="steps__n">03</span><div><h3>Plates in the middle</h3><p>Pour something cold. Yamas.</p></div></li>
+          </ol>
+        </div>
+
+        <a class="card card--cta" href="reservations">
+          <span class="card--cta__script">or come sit with us?</span>
+          <span class="card--cta__title">Book a Table</span>
+          <span class="rail__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
       </div>
-
-      <div class="card card--pad">
-        <h2 class="flourish"><span>Travels Well</span></h2>
-        <p class="form-intro" data-reveal>Some things are better on the beach. These are just as good on your couch.</p>
-
-        <article class="row" data-reveal>
-          <img class="row__thumb" src="images/food/gyro.jpg" alt="Chicken Gyro Pita" width="800" height="530" loading="lazy" decoding="async">
-          <div class="row__body">
-            <div class="row__line"><h3>Chicken Gyro Pita</h3><span class="row__dots"></span><span class="row__price">$19</span></div>
-            <p>Onion, tomato, tzatziki, open face</p>
-          </div>
-        </article>
-        <article class="row" data-reveal>
-          <img class="row__thumb" src="images/food/octopus.jpg" alt="Chicken Kebab" width="800" height="489" loading="lazy" decoding="async">
-          <div class="row__body">
-            <div class="row__line"><h3>Chicken Kebab</h3><span class="row__dots"></span><span class="row__price">$24</span></div>
-          </div>
-        </article>
-        <article class="row" data-reveal>
-          <img class="row__thumb" src="images/food/moussaka.jpg" alt="Moussaka" width="800" height="1067" loading="lazy" decoding="async">
-          <div class="row__body">
-            <div class="row__line"><h3>Moussaka</h3><span class="row__dots"></span><span class="row__price">$24</span></div>
-            <p>Eggplant, tomato, béchamel</p>
-          </div>
-        </article>
-        <article class="row" data-reveal>
-          <div class="row__body">
-            <div class="row__line"><h3>Greek Village Salad <em>horiatiki</em></h3><span class="row__dots"></span><span class="row__price">$18</span></div>
-            <p>Tomato, cucumber, feta, kalamata, red onion, green pepper</p>
-          </div>
-        </article>
-        <article class="row" data-reveal>
-          <img class="row__thumb" src="images/food/shrimp.jpg" alt="Garlic Shrimp" width="800" height="534" loading="lazy" decoding="async">
-          <div class="row__body">
-            <div class="row__line"><h3>Garlic Shrimp</h3><span class="row__dots"></span><span class="row__price">$36</span></div>
-            <p>Roasted garlic, olive oil, pita</p>
-          </div>
-        </article>
-        <article class="row" data-reveal>
-          <img class="row__thumb" src="images/food/baklava2.jpg" alt="Pistachio Baklava" width="800" height="533" loading="lazy" decoding="async">
-          <div class="row__body">
-            <div class="row__line"><h3>Pistachio Baklava</h3><span class="row__dots"></span><span class="row__price">$13</span></div>
-            <p>Layered phyllo, Sicilian pistachios, Greek honey syrup</p>
-          </div>
-        </article>
-
-        <p class="secret" data-reveal><span>family style, family size</span> Feeding a crowd? The Meat Platter, Seafood Platter, and Miss Greek Platter are made for the table.</p>
-      </div>
-
-      <div class="card card--pad">
-        <h2 class="flourish"><span>How It Works</span></h2>
-        <ol class="steps">
-          <li data-reveal><span class="steps__n">01</span><div><h3>Build your table</h3><p>Pick your plates. We'd start with the spreads and work outward.</p></div></li>
-          <li data-reveal><span class="steps__n">02</span><div><h3>Pickup or delivery</h3><p>Grab it at the host stand, or let it come to you inside five miles.</p></div></li>
-          <li data-reveal><span class="steps__n">03</span><div><h3>Plates in the middle</h3><p>Unpack it, push it to the center, pour something cold. Yamas.</p></div></li>
-        </ol>
-      </div>
-
-      <a class="card card--cta" href="reservations" data-reveal>
-        <span class="card--cta__script">or come sit with us?</span>
-        <span class="card--cta__title">Book a Table</span>
-        <span class="rail__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
     </div>
   </main>
 
-  <footer class="site-foot">
-    <div class="site-foot__panel">
-      <a class="site-foot__logo" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" loading="lazy" decoding="async"></a>
-      <address class="site-foot__contact">
-        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave, Miami Beach, FL 33139</a>
-        <span class="site-foot__dot" aria-hidden="true">·</span>
-        <a href="tel:+13053326933">(305) 332-6933</a>
-      </address>
+  <footer class="colophon">
+    <div class="wrap">
+      <div class="rule" aria-hidden="true"></div>
+      <div class="colophon__grid">
+        <a class="colophon__logo" href="./"><img src="images/logo/logo-primary.svg" alt="Miss Greek · Beach Bar &amp; Grill" width="229" height="321" loading="lazy" decoding="async"></a>
+        <div>
+          <p class="kicker">Visit</p>
+          <address>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">1401 Collins Ave<br>Miami Beach, FL 33139</a>
+          </address>
+          <a class="colophon__phone" href="tel:+13053326933">(305) 332-6933</a>
+        </div>
+        <nav aria-label="Footer">
+          <p class="kicker">The house</p>
+          <a href="menu">Menu</a>
+          <a href="reservations">Reservations</a>
+          <a href="order" aria-current="page">Order</a>
+          <a href="about">About</a>
+        </nav>
+        <div>
+          <p class="kicker">Say hello</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/miss.greek/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <p class="colophon__sign">Come hungry. Stay late. Yamas.</p>
     </div>
   </footer>
+
+  <nav class="dock" aria-label="Visit">
+    <a href="menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4h12v16H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+      <span>Menu</span>
+    </a>
+    <a href="reservations">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+      <span>Reserve</span>
+    </a>
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1401+Collins+Ave,+Miami+Beach,+FL+33139" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>
+      <span>Location</span>
+    </a>
+  </nav>
 
   <script type="module" src="./src/main.js"></script>
 </body>
