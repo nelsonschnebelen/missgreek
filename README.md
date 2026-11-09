@@ -36,9 +36,9 @@ The page around it is a separate harbor palette: cream paper, navy, clay.
 lettermagic (script). Those are commercial faces and are not licensed here.
 The preview uses free stand-ins chosen for a warm printed-menu feeling:
 
-- **Fraunces** for display
-- **Outfit** for body text
-- **Caveat** for the short handwritten lines
+- **Bodoni Moda** (OFL) for display titles, standing in for Londona
+- **Jost** (OFL) for body text, standing in for Neutra
+- **Caveat** (OFL) for the short handwritten lines, standing in for lettermagic
 
 To swap in the real faces: drop the font files in `public/fonts/`, add
 `@font-face` rules at the top of `src/style.css`, and update the three
