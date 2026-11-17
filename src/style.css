@@ -351,22 +351,29 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
   inset: 0;
 }
 .hero__media { z-index: 0; }
+.hero__media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .hero__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 36%;
 }
 .hero__veil {
   z-index: 1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 82% 64% at 12% 92%, rgba(8, 16, 22, 0.9) 0%, rgba(8, 16, 22, 0.72) 24%, rgba(8, 16, 22, 0.32) 46%, rgba(8, 16, 22, 0.08) 62%, transparent 76%);
+    linear-gradient(102deg, rgba(8, 16, 22, 0.92) 0%, rgba(8, 16, 22, 0.88) 28%, rgba(8, 16, 22, 0.76) 48%, rgba(8, 16, 22, 0.5) 64%, transparent 80%),
+    linear-gradient(180deg, transparent 36%, rgba(8, 16, 22, 0.45) 70%, rgba(8, 16, 22, 0.72) 100%);
 }
 @media (max-width: 860px) {
+  .hero__media img { object-position: center 46%; }
   .hero__veil {
     background:
-      radial-gradient(ellipse 150% 58% at 50% 100%, rgba(8, 16, 22, 0.88) 0%, rgba(8, 16, 22, 0.55) 38%, rgba(8, 16, 22, 0.16) 58%, transparent 74%);
+      linear-gradient(180deg, transparent 0%, rgba(8, 16, 22, 0.12) 40%, rgba(8, 16, 22, 0.82) 58%, rgba(8, 16, 22, 0.93) 70%, rgba(8, 16, 22, 0.95) 100%);
   }
 }
 .hero__copy {
@@ -444,7 +451,7 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
   object-fit: cover;
   z-index: 0;
 }
-.path:nth-child(1) img { object-position: center 46%; }
+.path:nth-child(1) img { object-position: center 48%; }
 .path:nth-child(2) img { object-position: center 58%; }
 .path:nth-child(3) img { object-position: center 45%; }
 .path__body {
@@ -496,7 +503,7 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
   width: 100%;
   height: min(78vw, 460px);
   object-fit: cover;
-  object-position: center 68%;
+  object-position: center 56%;
 }
 .letter__frame figcaption {
   margin-top: 0.45rem;
@@ -671,11 +678,11 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
 }
 .stage-hero .script { margin-top: 0.35rem; color: #e8b7b3; }
 .page-menu .stage-hero { min-height: 40vh; }
-.page-menu .stage-hero img { object-position: center 48%; }
+.page-menu .stage-hero img { object-position: center 32%; }
 .page-about .stage-hero { min-height: 56vh; }
-.page-about .stage-hero img { object-position: center 64%; }
-.page-order .stage-hero img { object-position: center 68%; }
-.page-reserve .stage-hero img { object-position: center 70%; }
+.page-about .stage-hero img { object-position: center 42%; }
+.page-order .stage-hero img { object-position: center center; }
+.page-reserve .stage-hero img { object-position: center 58%; }
 .page-order .reserve-grid__main,
 .page-menu .page-block > .stack {
   width: min(100%, 820px);
@@ -1226,6 +1233,7 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
   }
   .path,
   .path__body { min-height: 460px; }
+  .path:nth-child(2) img { object-position: center 48%; }
   .path__name { font-size: 3rem; }
 
   .letter { padding: 0.8rem 0 1rem; }
