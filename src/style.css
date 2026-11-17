@@ -373,7 +373,7 @@ body.nav-open .mast__burger span:nth-child(3) { transform: translateY(-6.5px) ro
   .hero__media img { object-position: center 46%; }
   .hero__veil {
     background:
-      radial-gradient(ellipse 150% 58% at 50% 100%, rgba(8, 16, 22, 0.88) 0%, rgba(8, 16, 22, 0.55) 38%, rgba(8, 16, 22, 0.16) 58%, transparent 74%);
+      linear-gradient(180deg, transparent 0%, rgba(8, 16, 22, 0.12) 40%, rgba(8, 16, 22, 0.82) 58%, rgba(8, 16, 22, 0.93) 70%, rgba(8, 16, 22, 0.95) 100%);
   }
 }
 .hero__copy {
