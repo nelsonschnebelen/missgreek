@@ -70,7 +70,7 @@ npm run build
 - **Online ordering** — "Start your order" stays in the markup and stays hidden
   until `ORDER_URL` in `src/main.js` is a real provider link.
 - **Reservations** — the form posts to Netlify Forms (`name="reservation"`).
-- **Phone** — (305) 332-6933 on the order line, footer, reservations, and
+- **Phone** — (305) 763-8404 on the order line, footer, reservations, and
   Restaurant JSON-LD. Do not publish (305) 331-9275, (305) 555-0142, or any stand-in.
 - **Address** — 1401 Collins Ave, Miami Beach, FL 33139, with a Google Maps
   directions link. Do not publish opening hours or “Temporarily closed”.
