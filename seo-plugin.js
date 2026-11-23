@@ -153,7 +153,7 @@ function restaurantSchema(origin) {
     acceptsReservations: true,
     image: `${origin}/images/og.jpg`,
     servesCuisine: ['Greek', 'Mediterranean'],
-    telephone: '+1-305-332-6933',
+    telephone: '+1-305-763-8404',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '1401 Collins Ave',
@@ -208,7 +208,7 @@ Sitemap: ${origin}/sitemap.xml
 - Name: Miss Greek · Beach Bar & Grill
 - Cuisine: Greek / Mediterranean, with the priced menu published on the menu page
 - Where: 1401 Collins Ave, Miami Beach, FL 33139.
-- Phone: (305) 332-6933
+- Phone: (305) 763-8404
 - Directions: ${MAPS_DIRECTIONS}
 - Happy hour on the menu: Monday–Thursday 4–7 PM, Friday–Sunday 3–6 PM.
 - Reservations: recommended for sunset. Walk-ins are welcome; the door doesn't check names.
